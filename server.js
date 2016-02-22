@@ -9,6 +9,7 @@ var proxyIndeed = function(request, response) {
   (requestProxy({
     url: 'http://api.indeed.com/ads/apisearch',
     query: {
+      v: '2',
       publisher: process.env.INDEED_PUBLISHER,
       format: 'json',
       userip: req.ip,
@@ -18,8 +19,10 @@ var proxyIndeed = function(request, response) {
 };
 app.get('/indeed/*', proxyIndeed);
 
+// static files
 app.use(express.static('./public/'));
 
+// fallback: send index
 app.get('*', function(request, response) {
   console.log('New request:', request.url);
   if (request.url === '/favicon.ico') {
