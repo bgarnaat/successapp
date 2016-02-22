@@ -14,6 +14,8 @@
       page: page,
     };
     jobs.loadJobs(query, jobsView.drawJobs);
+
+    // TODO: load/display events
   };
 
   // exports
