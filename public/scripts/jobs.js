@@ -34,7 +34,7 @@ Parameters:
     description: short description of the job
     url: url to link to
   */
-  jobs.loadJobs = function(query, page, next) {
+  jobs.loadJobs = function(query, next) {
     indeed_query = $.ajax({
       type: 'GET',
       url: '/indeed/',
@@ -42,7 +42,7 @@ Parameters:
       data: {
         q: query.query,
         l: query.location,
-        start: PAGE_SIZE * (page-1),
+        start: PAGE_SIZE * (query.page - 1),
         limit: PAGE_SIZE,
         sort: 'relevance',
         radius: query.radius || 25,
