@@ -35,7 +35,7 @@ Parameters:
     url: url to link to
   */
   jobs.loadJobs = function(query, next) {
-    indeed_query = $.ajax({
+    indeedQuery = $.ajax({
       type: 'GET',
       url: '/indeed/',
       dataType: 'json',
@@ -49,7 +49,7 @@ Parameters:
       },
     });
 
-    $.when(indeed_query).done(function(data) {
+    $.when(indeedQuery).done(function(data) {
       // here we have our data
       // ╰( ͡° ͜ʖ ͡° )つ──☆・ﾟ
       /* Fields we get back per object in data.results:
