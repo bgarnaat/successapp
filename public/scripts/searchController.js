@@ -1,36 +1,41 @@
 (function(module) {
   var searchController = {};
 
+  // click handler for our search button
   $('#button').click(function() {
-    var destination = (
-      '/location/' + $('#search-location').val() +
-      '/search/' + $('#search-keywords').val() + '/'
-    );
-    console.log('button navigating to', destination);
-    page(destination);
+    var destination = '/';
+    var location = $('#search-location').val();
+    var keywords = $('#search-keywords').val();
+    if (location || keywords) { // don't do anything if the boxes are empty
+      if (location) {
+        destination += 'location/' + encodeURIComponent(location) + '/';
+      }
+      if (keywords) {
+        destination += 'search/' + encodeURIComponent(keywords) + '/';
+      }
+      console.log('button navigating to', destination);
+      page(destination);
+    }
   });
 
+  // search result controller
   searchController.index = function(ctx, next) {
     // load from context
-    var location = ctx.params[1];
-    var search = ctx.params[3];
-    var page = ctx.params[5];
+    var location = decodeURIComponent(ctx.params[1]);
+    var search = decodeURIComponent(ctx.params[3]);
 
     console.log('hit search index', location, search, page);
     searchController.ctx = ctx;
 
-    if (location && search) {
-      // build model query
-      var query = {
-        query: search,
-        location: location,
-        page: page,
-      };
+    // build model query
+    var query = {
+      query: search,
+      location: location,
+      page: page,
+    };
 
-      jobs.loadJobs(query, jobsView.drawJobs);
-      events.loadEvents(query, eventsView.drawEvents)
-      // TODO: load/display events
-    }
+    jobs.loadJobs(query, jobsView.drawJobs);
+    events.loadEvents(query, eventsView.drawEvents);
 
     ctx.handled = true;
     next();
