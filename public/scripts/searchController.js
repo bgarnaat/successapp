@@ -29,8 +29,8 @@
       };
 
       jobs.loadJobs(query, jobsView.drawJobs);
-      events.loadEvents(query, eventsView.drawEvents)
       // TODO: load/display events
+      events.loadEvents(query, eventsView.drawEvents)
     }
 
     ctx.handled = true;
