@@ -10,6 +10,7 @@ parameters:
   sort_by: sort by id, date, name, city, distance, or best.  prefix with hyphenb for inverse sort
   location.within: distance around a given location to search.  Should be followed by 'mi' or 'km'
 */
+
 (function(module) {
   var events = {};
 
@@ -32,8 +33,14 @@ parameters:
       },
     });
 
+    location: {
+      address: query.location,
+      within: (query.radius || 25) + 'mi'
+    }
+
     $.when(eventbrite_query).done(function(data) {
       // TODO:  list returned data (some or all?)
+
       loadedEvents = [];
       data.events.forEach(function(r) {
         // TODO:  use cat_id, subcat_id, venue_id to load associated data
