@@ -23,12 +23,12 @@
       </article>
     </script>
     <!-- EVENTBRITE TEMPLATE -->
-    <script id="event-template" type="text/x-handlebars-template">
-      <article class="eventlisting">
-        <h1 class="eventname">{{}}</h1>
-        <p class="eventcompany">{{}}</p>
-        <p class="eventdate">{{}}></p>
-        <p class="eventlocation">{{}}</p>
+    <script id="events_template" type="text/x-handlebars-template">
+      <article class="event_listing">
+        <h1 class="event_name">{{name}}</h1>
+        <p class="event_company">{{category_id}}</p>
+        <p class="event_date">{{time}}></p>
+        <p class="event_location">{{venue_id}}</p>
       </article>
     </script>
   </head>
@@ -88,7 +88,6 @@ $('.example1').wmuSlider();
   </section>
   <!-- EVENT SECTION -->
   <section id="eventsection" class="tab-content"></section>
-
 </main>
 
 <footer>

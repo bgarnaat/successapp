@@ -73,8 +73,6 @@ Parameters:
           url: r.url,
         });
       });
-      console.log(loadedJobs);
-
       next(loadedJobs);
     })
   };

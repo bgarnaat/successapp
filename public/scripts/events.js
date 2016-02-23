@@ -16,8 +16,8 @@ parameters:
 
   var PAGE_SIZE = 10;
 
-  events.loadEvents = function(query, page, next) {
-    eventbrite_query = $.ajax({
+  events.loadEvents = function(query, next) {
+    eventbriteQuery = $.ajax({
       type: 'GET',
       url: '/eventbrite/',
       dataType: 'json',
@@ -33,14 +33,9 @@ parameters:
       },
     });
 
-    location: {
-      address: query.location,
-      within: (query.radius || 25) + 'mi'
-    }
-
-    $.when(eventbrite_query).done(function(data) {
+    $.when(eventbriteQuery).done(function(data) {
       // TODO:  list returned data (some or all?)
-
+      console.log(data);
       loadedEvents = [];
       data.events.forEach(function(r) {
         // TODO:  use cat_id, subcat_id, venue_id to load associated data
@@ -51,10 +46,11 @@ parameters:
           organizer_id: r.organizer_id,
           time: r.start.local,
           description: r.description,
-          url: r.url
+          url: r.url,
+          venue_id: r.venue_id
         });
       });
-
+      console.log(loadedEvents);
       next(loadedEvents);
     });
   }
