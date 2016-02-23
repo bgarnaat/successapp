@@ -25,13 +25,8 @@ app.use(express.static('./public/'));
 // fallback: send index
 app.get('*', function(request, response) {
   console.log('New request:', request.url);
-  if (request.url === '/favicon.ico') {
-    console.log('sending 404');
-    response.sendStatus(404);
-  } else {
-    console.log('sending index');
-    response.sendFile('./public/index.html', { root: '.' });
-  }
+  console.log('sending index');
+  response.sendFile('./public/index.html', { root: '.' });
 });
 
 app.listen(port, function() {
