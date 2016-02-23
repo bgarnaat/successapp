@@ -10,9 +10,17 @@ main {
   justify-content: center;
 }
 
+.slogan {
+  font-family: "Lato";
+  font-size: 25px;
+  color: white;
+  padding-top: 5%;
+}
+
 .homepageimage {
-  align-self: center;
-  padding-top: 50px;
+  justify-content: center;
+  text-align: center;
+  padding-top: 20px;
   padding-bottom: 0px;
 }
 
