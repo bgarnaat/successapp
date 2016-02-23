@@ -23,19 +23,15 @@ parameters:
       dataType: 'json',
       data: {
         q: query.query,
-        location: {
-          address: query.location,
-          within: (query.radius || 25) + 'mi'
-        },
-        start: PAGE_SIZE * (query.page - 1),
-        limit: PAGE_SIZE,
+        'location.address': query.location,
+        'location.within': (query.radius || 25) + 'mi',
+        // start: PAGE_SIZE * (query.page - 1),
         sort_by: 'date',
       },
     });
 
     $.when(eventbriteQuery).done(function(data) {
       // TODO:  list returned data (some or all?)
-      console.log(data);
       loadedEvents = [];
       data.events.forEach(function(r) {
         // TODO:  use cat_id, subcat_id, venue_id to load associated data
@@ -44,12 +40,13 @@ parameters:
           category_id: r.category_id,
           subcategory_id: r.subcategory_id,
           organizer_id: r.organizer_id,
-          time: r.start.local,
+          time: new Date(r.start.local),
           description: r.description,
           url: r.url,
           venue_id: r.venue_id
         });
       });
+
       console.log(loadedEvents);
       next(loadedEvents);
     });

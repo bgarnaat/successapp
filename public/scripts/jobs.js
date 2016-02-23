@@ -48,7 +48,6 @@ Parameters:
         radius: query.radius || 25,
       },
     });
-
     $.when(indeedQuery).done(function(data) {
       // here we have our data
       // ╰( ͡° ͜ʖ ͡° )つ──☆・ﾟ
@@ -63,6 +62,7 @@ Parameters:
         url
       */
       loadedJobs = [];
+      console.log(loadedJobs);  
       data.results.forEach(function(r) {
         loadedJobs.push({
           title: r.jobtitle,
