@@ -27,12 +27,10 @@
     // $('.jobs').show();
     // $('#jobsection').slideDown();
 
-
     // build model query
     var query = {
       query: search,
       location: location,
-      page: page,
     };
 
     jobs.loadJobs(query, jobsView.drawJobs);
