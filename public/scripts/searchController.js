@@ -16,8 +16,9 @@
     var search = ctx.params[3];
     var page = ctx.params[5];
 
-    console.log('hit search index', location, search, page);
-    searchController.ctx = ctx;
+    // $('.jobs').show();
+    // $('#jobsection').slideDown();
+
 
     if (location && search) {
       // build model query
