@@ -12,8 +12,8 @@ var proxyIndeed = function(request, response) {
       v: '2',
       publisher: process.env.INDEED_PUBLISHER,
       format: 'json',
-      userip: req.ip,
-      useragent: req.get('User-Agent'),
+      userip: request.ip,
+      useragent: request.get('User-Agent'),
     }
   }))(request, response);
 };
