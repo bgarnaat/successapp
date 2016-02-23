@@ -1,10 +1,15 @@
 (function(module) {
   var eventsView = {};
 
+  var eventsTemplate = Handlebars.compile($('#events_template').text());
+
   eventsView.drawEvents = function(events) {
-    // TODO render objects onto page here
+    $eventSection = $('#eventsection');
+    $eventSection.empty();
+    events.forEach(function(a) {
+      $eventSection.append(eventsTemplate(a));
+    });
   };
 
-  // exports
   module.eventsView = eventsView;
 })(window);
