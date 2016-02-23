@@ -50,7 +50,7 @@ Parameters:
     });
 
     $.when(indeed_query).done(function(data) {
-      // here we have our data
+``      // here we have our data
       // ╰( ͡° ͜ʖ ͡° )つ──☆・ﾟ
       /* Fields we get back per object in data.results:
         company
@@ -73,6 +73,7 @@ Parameters:
           url: r.url,
         });
       });
+      console.log(loadedJobs);
 
       next(loadedJobs);
     })

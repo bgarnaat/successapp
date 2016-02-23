@@ -17,6 +17,7 @@ var proxyIndeed = function(request, response) {
     }
   }))(request, response);
 };
+
 app.get('/indeed/*', proxyIndeed);
 
 // eventbrite API proxying
