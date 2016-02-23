@@ -1,56 +1,53 @@
 // EVENTS
 /*
-  parameter shorthand corresponds to GET /events/search/ paramters.  Reference to https://www.eventbrite.com/developer/v3/endpoints/events/:
-    q: query string
-    vc: venue.city
-    c: categories
-    d: start_date.keyword
-
-
+Eventbrite API: proxied through /eventbrite/* on server
+parameters list: https://www.eventbrite.com/developer/v3/endpoints/events/
+parameters:
+  q: query string
+  location.address: location address, city, state, zip, country
+  start: start date & time
+  limit: number results per page
+  sort_by: sort by id, date, name, city, distance, or best.  prefix with hyphenb for inverse sort
+  location.within: distance around a given location to search.  Should be followed by 'mi' or 'km'
 */
-
 (function(module) {
   var events = {};
 
   var PAGE_SIZE = 10;
 
   events.loadEvents = function(query, page, next) {
-
-    $.ajax({
-      url: 'https://www.eventbriteapi.com/v3/events/search/' +
-            query ? '?' + query : '',
+    eventbrite_query = $.ajax({
       type: 'GET',
-      headers: {'Authorization': 'Bearer ' + key_eb},
-
+      url: '/eventbrite/',
       dataType: 'json',
       data: {
         q: query.query,
-        l: query.location,
+        location.address: query.location,
         start: PAGE_SIZE * (query.page - 1),
         limit: PAGE_SIZE,
-        // sort: 'relevance',
-        radius: query.radius || 25,
+        sort_by: 'date',
+        location.within: (query.radius || 25) + 'mi',
       },
-
-      dataType: 'json',
-      data: {
-        q: query.query,
-        l: query.location,
-        start: PAGE_SIZE * (query.page -1),
-        limit: PAGE_SIZE,
-        // sort: 'relevance',
-        // radius: query.radius || 25,
-      },
-
-      success: function(data, message, xhr) {
-        console.log('xhr: ');
-        console.log(xhr);
-        console.log('data: ');
-        console.log(data);
-      }
     });
 
-    next();
+    $.when(eventbrite_query).done(function(data) {
+      // TODO:  list returned data (some or all?)
+      loadedEvents = [];
+      data.events.forEach(function(r) {
+        // TODO:  use cat_id, subcat_id, venue_id to load associated data
+        loadedEvents.push({
+          name: r.name.text,
+          category_id: r.category_id,
+          subcategory_id: r.subcategory_id,
+          organizer_id: r.organizer_id,
+          time: r.start.local,
+          description: r.description,
+          url: r.url;
+        });
+      });
+
+      next(loadedEvents);
+    });
   }
 
   module.events = events;
