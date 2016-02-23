@@ -1,1 +1,88 @@
 /*BASE CSS*/
+body {
+  margin: 0;
+  background-color: #99CC00;
+}
+
+/*NAV BAR*/
+
+.topsection {
+  background-color: #333333;
+  border-bottom: solid 6px #33CC33;
+  align-items: center;
+  height: 58px;
+  width: 100%;
+  display: flex;
+}
+
+.logo {
+  max-height: 48px;
+  padding-left: 5%;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding-right: 5%;
+}
+
+.nav-ul {
+  display: inline-flex;
+  list-style: none;
+}
+
+.nav-target {
+  padding: 0px 10px 0px 10px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-family: "Lato";
+  color: white;
+}
+
+/*SEARCH BOXES*/
+
+.input-section {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.searchbox1 {
+  padding-right: 40px;
+  /*border-bottom: solid 3px #33CC33;*/
+  /*border-right: solid 3px #33CC33;*/
+}
+
+.searchbox2 {
+  padding-left: 40px;
+  /*border-right: solid 3px #33CC33;*/
+}
+
+.searchbox {
+  width: 300px;
+  height: 40px;
+  text-align: center;
+  font-family: "Lato";
+  font-size: 15px;
+  color: grey;
+  border-top: none;
+  border-left: none;
+  border-bottom: solid 4px #33CC33;
+  border-right: solid 4px #33CC33;
+}
+
+/*FOOTER*/
+
+footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0;
+  text-align: center;
+  background-color: #F0F0F0;
+}
