@@ -25,10 +25,10 @@ var proxyEvent = function(request, response) {
   console.log('Routing Eventbrite request for ', request.params[0]);
   (requestProxy({
     url: 'https://www.eventbriteapi.com/v3/events/search/',
-    headers: {'Authorization': 'Bearer ' + process.env.KEY_EVENTBRIGHtT}
+    headers: {'Authorization': 'Bearer ' + process.env.KEY_EVENTBRITE}
   }))(request, response);
 }
-app.get('/everbrite/*', proxyEvent);
+app.get('/eventbrite/*', proxyEvent);
 
 // static files
 app.use(express.static('./public/'));
