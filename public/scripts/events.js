@@ -22,11 +22,13 @@ parameters:
       dataType: 'json',
       data: {
         q: query.query,
-        location.address: query.location,
+        location: {
+          address: query.location,
+          within: (query.radius || 25) + 'mi'
+        },
         start: PAGE_SIZE * (query.page - 1),
         limit: PAGE_SIZE,
         sort_by: 'date',
-        location.within: (query.radius || 25) + 'mi',
       },
     });
 
@@ -42,7 +44,7 @@ parameters:
           organizer_id: r.organizer_id,
           time: r.start.local,
           description: r.description,
-          url: r.url;
+          url: r.url
         });
       });
 

@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="styles/module.css">
     <link rel="stylesheet" href="styles/state.css">
     <link rel="stylesheet" href="vendors/styles/slider.css">
-
     <!-- FONTS -->
     <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic,900italic,900,300italic,300' rel='stylesheet' type='text/css'>
-    <!-- HANDLEBAR TEMPLATE -->
-    <!-- =================================================================== -->
+
+    <!-- HANDLEBAR TEMPLATES -->
+
     <!-- JOB TEMPLATE -->
     <script id="jobtemplate" type="text/x-handlebars-template">
       <article class="joblisting">
@@ -22,16 +22,17 @@
         <p class="companyname">{{company}} - {{location}}</p>
       </article>
     </script>
-
     <!-- EVENTBRITE TEMPLATE -->
     <script type="text/javascript" type="text/x-handlebars-template">
-      <section>
-
-      </section>
+      <article class="eventlisting">
+        <h1 class="eventname">{{}}</h1>
+        <p class="eventcompany">{{}}</p>
+        <p class="eventdate">{{}}></p>
+        <p class="eventlocation">{{}}</p>
+      </article>
     </script>
-
   </head>
-  <!-- ===================================================================== -->
+  <!-- BODY -->
   <body>
     <!-- NAV BAR -->
     <header class="topsection">
@@ -47,65 +48,67 @@
 
     <!-- SLIDER -->
     <!-- <div class="wmuSlider example1">
-			<div class="wmuSliderWrapper">
-				<article><p>Find the right cloud Hosting Without the Fluffy  white stuff</p> <img src="/img/search.png"/> </article>
-				<article><p>Lorem ipsum dolor sit amet elit dolore magna aliqua</p> <img src="/img/ticket.png"/> </article>
-				<article><p>Duis aute irure dolor in velit esse cillum dolore labore et dolore</p> <img src="/img/hands.png"/> </article>
-				<article><p>Sed do eiusmod tempor labore et dolore magna aliqua</p> <img src="/img/mountain.png"/> </article>
-			</div>
-    </div>
-		<script>
-       $('.example1').wmuSlider();
-   	</script> -->
+    <div class="wmuSliderWrapper">
+    <article><p>Find the right cloud Hosting Without the Fluffy  white stuff</p> <img src="/img/search.png"/> </article>
+    <article><p>Lorem ipsum dolor sit amet elit dolore magna aliqua</p> <img src="/img/ticket.png"/> </article>
+    <article><p>Duis aute irure dolor in velit esse cillum dolore labore et dolore</p> <img src="/img/hands.png"/> </article>
+    <article><p>Sed do eiusmod tempor labore et dolore magna aliqua</p> <img src="/img/mountain.png"/> </article>
+  </div>
+</div>
+<script>
+$('.example1').wmuSlider();
+</script> -->
 
-    <!-- MAIN SECTION -->
-    <!-- =================================================================== -->
-    <main>
-      <!-- PLACEHOLDER IMAGE -->
-      <section class="homepageimage">
-        <img src="/img/search.png">
-      </section>
-      <!-- SEARCH FORM -->
-      <section class="input-section">
-        <article class="searchbox1">
-          <input class="searchbox" type="text" placeholder="Job Title, Keywords, or Company Name">
-        </article>
-        <article class="searchbox2">
-          <input class="searchbox" type="text" placeholder="City, State, or Zip Code">
-        </article>
-      </section>
-      <!-- SUBMIT BUTTON -->
-      <section class="submitsection">
-        <button class="submitbutton" type="button" name="button">Land Your Next Job!</button>
-      </section>
-      <!-- JOB SECTION -->
-      <section id="jobsection" class="tab-content"></section>
+<!-- MAIN SECTION -->
+<!-- =================================================================== -->
+<main>
+  <!-- PLACEHOLDER IMAGE -->
+  <section class="homepageimage">
+    <img src="/img/search.png">
+  </section>
+  <!-- SEARCH FORM -->
+  <section class="input-section">
+    <article class="searchbox1">
+      <input id="searchkeyword" class="searchbox" type="text" placeholder="Job Title, Keywords, or Company Name">
+    </article>
+    <article class="searchbox2">
+      <input id="searchlocation" class="searchbox" type="text" placeholder="City, State, or Zip Code">
+    </article>
+  </section>
+  <!-- SUBMIT BUTTON -->
+  <section class="submitsection">
+    <button id="button" class="submitbutton" type="button" name="button">Land Your Next Job!</button>
+  </section>
+  <!-- JOB SECTION -->
+  <section id="jobsection" class="tab-content"></section>
+  <!-- EVENT SECTION -->
+  <section id="eventsection" class="tab-content"></section>
 
-    </main>
+</main>
 
-    <footer>
-      &copy; 2016 SuccessApp
-    </footer>
-    <!-- =================================================================== -->
-    <!-- VENDOR SCRIPTS -->
-    <script type="text/javascript" src="vendors/scripts/jquery.js"></script>
-    <script type="text/javascript" src="vendors/scripts/handlebars.js"></script>
-    <script type="text/javascript" src="vendors/scripts/page.js"></script>
+<footer>
+  &copy; 2016 SuccessApp
+</footer>
 
-    <!-- SLIDERS SCRIPTS -->
-    <!-- <script type="text/javascript" src="/vendors/scripts/jquery.nivo.slider.js"></script>
-    <script type="text/javascript" src="/vendors/scripts/jquery.sliderTabs.min.js"></script>
-    <script type="text/javascript" src="/vendors/scripts/jquery.wmuSlider.js"></script>
-    <script type="text/javascript" src="/vendors/scripts/modernizr.custom.min.js"></script> -->
+<!-- VENDOR SCRIPTS -->
+<script type="text/javascript" src="/vendors/scripts/jquery.js"></script>
+<script type="text/javascript" src="/vendors/scripts/handlebars.js"></script>
+<script type="text/javascript" src="/vendors/scripts/page.js"></script>
 
-    <!-- SCRIPTS -->
-    <script type="text/javascript" src="scripts/events.js"></script>
-    <script type="text/javascript" src="scripts/jobs.js"></script>
-    <script type="text/javascript" src="scripts/events.js"></script>
-    <script type="text/javascript" src="scripts/jobsView.js"></script>
-    <script type="text/javascript" src="scripts/eventsView.js"></script>
-    <script type="text/javascript" src="scripts/searchController.js"></script>
-    <!-- <script type="text/javascript" src="scripts/routes.js"></script> -->
+<!-- SLIDER SCRIPTS -->
+<!-- <script type="text/javascript" src="/vendors/scripts/jquery.nivo.slider.js"></script>
+<script type="text/javascript" src="/vendors/scripts/jquery.sliderTabs.min.js"></script>
+<script type="text/javascript" src="/vendors/scripts/jquery.wmuSlider.js"></script>
+<script type="text/javascript" src="/vendors/scripts/modernizr.custom.min.js"></script> -->
 
-  </body>
+<!-- SCRIPTS -->
+<script type="text/javascript" src="/scripts/events.js"></script>
+<script type="text/javascript" src="/scripts/jobs.js"></script>
+<script type="text/javascript" src="/scripts/events.js"></script>
+<script type="text/javascript" src="/scripts/jobsView.js"></script>
+<script type="text/javascript" src="/scripts/eventsView.js"></script>
+<script type="text/javascript" src="/scripts/searchController.js"></script>
+<script type="text/javascript" src="/scripts/routes.js"></script>
+
+</body>
 </html>

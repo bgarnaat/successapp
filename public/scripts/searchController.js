@@ -1,6 +1,13 @@
 (function(module) {
   var searchController = {};
 
+  $('button').click(function() {
+    page(
+      '/location/' + $('searchlocation').val() +
+      '/search/' + $('seachkeyword').val()
+    );
+  });
+
   searchController.index = function(ctx, next) {
     // load from context
     location = ctx.params[1];
