@@ -1,31 +1,41 @@
 (function(module) {
   var searchController = {};
 
-  $('button').click(function() {
-    page(
-      '/location/' + $('searchlocation').val() +
-      '/search/' + $('seachkeyword').val()
+  $('#button').click(function() {
+    var destination = (
+      '/location/' + $('#search-location').val() +
+      '/search/' + $('#search-keywords').val() + '/'
     );
+    console.log('button navigating to', destination);
+    page(destination);
   });
 
   searchController.index = function(ctx, next) {
     // load from context
-    location = ctx.params[1];
-    search = ctx.params[3];
-    page = ctx.params[5];
+    var location = ctx.params[1];
+    var search = ctx.params[3];
+    var page = ctx.params[5];
 
-    // build model query
-    var query = {
-      query: search,
-      location: location,
-      page: page,
-    };
+    console.log('hit search index', location, search, page);
+    searchController.ctx = ctx;
 
-    jobs.loadJobs(query, jobsView.drawJobs);
-    events.loadEvents(query , eventsView.drawEvents)
-    // TODO: load/display events
+    if (location && search) {
+      // build model query
+      var query = {
+        query: search,
+        location: location,
+        page: page,
+      };
 
+      jobs.loadJobs(query, jobsView.drawJobs);
+      events.loadEvents(query, eventsView.drawEvents)
+      // TODO: load/display events
+    }
+
+    ctx.handled = true;
+    next();
   };
+
   // exports
   module.searchController = searchController;
 })(window);

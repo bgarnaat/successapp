@@ -3,27 +3,27 @@
     <title>Success App</title>
     <meta name="viewport" content="width=device-width" initial-scale="1">
     <!-- FAVICON -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/checklogofavicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/img/checklogofavicon.png">
     <!-- CSS LINKING -->
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/layout.css">
-    <link rel="stylesheet" href="styles/module.css">
-    <link rel="stylesheet" href="styles/state.css">
-    <link rel="stylesheet" href="vendors/styles/slider.css">
+    <link rel="stylesheet" href="/styles/base.css">
+    <link rel="stylesheet" href="/styles/layout.css">
+    <link rel="stylesheet" href="/styles/module.css">
+    <link rel="stylesheet" href="/styles/state.css">
+    <link rel="stylesheet" href="/vendors/styles/slider.css">
     <!-- FONTS -->
     <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic,900italic,900,300italic,300' rel='stylesheet' type='text/css'>
 
     <!-- HANDLEBAR TEMPLATES -->
 
     <!-- JOB TEMPLATE -->
-    <script id="jobtemplate" type="text/x-handlebars-template">
+    <script id="job-template" type="text/x-handlebars-template">
       <article class="joblisting">
         <h1 class="jobtitle">{{title}}</h1>
         <p class="companyname">{{company}} - {{location}}</p>
       </article>
     </script>
     <!-- EVENTBRITE TEMPLATE -->
-    <script type="text/javascript" type="text/x-handlebars-template">
+    <script id="event-template" type="text/x-handlebars-template">
       <article class="eventlisting">
         <h1 class="eventname">{{}}</h1>
         <p class="eventcompany">{{}}</p>
@@ -36,7 +36,7 @@
   <body>
     <!-- NAV BAR -->
     <header class="topsection">
-      <img src="img/successapplogo.png" class="logo">
+      <img src="/img/successapplogo.png" class="logo">
       <nav class="main-nav">
         <ul class="nav-ul">
           <li class="nav-target"><a href="#" class="nav-link">About</a></li>
@@ -69,10 +69,10 @@ $('.example1').wmuSlider();
   <!-- SEARCH FORM -->
   <section class="input-section">
     <article class="searchbox1">
-      <input id="searchkeyword" class="searchbox" type="text" placeholder="Job Title, Keywords, or Company Name">
+      <input id="search-keywords" class="searchbox" type="text" placeholder="Job Title, Keywords, or Company Name">
     </article>
     <article class="searchbox2">
-      <input id="searchlocation" class="searchbox" type="text" placeholder="City, State, or Zip Code">
+      <input id="search-location" class="searchbox" type="text" placeholder="City, State, or Zip Code">
     </article>
   </section>
   <!-- SUBMIT BUTTON -->

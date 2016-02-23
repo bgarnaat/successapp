@@ -1,7 +1,7 @@
 (function(module) {
   var jobsView = {};
 
-  var jobTemplate = Handlebars.compile($('#jobtemplate').text());
+  var jobTemplate = Handlebars.compile($('#job-template').text());
 
   jobsView.drawJobs = function(jobs) {
     $jobsection = $('#jobsection');
