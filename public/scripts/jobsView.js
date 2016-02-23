@@ -1,8 +1,14 @@
 (function(module) {
   var jobsView = {};
 
+  var jobTemplate = Handlebars.compile($('#jobtemplate').text());
+
   jobsView.drawJobs = function(jobs) {
-    // TODO render jobjects onto page here
+    $jobsection = $('#jobsection');
+    $jobsection.empty();
+    jobs.forEach(function(job) {
+      $jobsection.append(jobTemplate(job));
+    });
   };
 
   // exports

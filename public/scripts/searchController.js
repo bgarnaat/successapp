@@ -1,6 +1,13 @@
 (function(module) {
   var searchController = {};
 
+  $('button').click(function() {
+    page(
+      '/location/' + $('searchlocation').val() +
+      '/search/' + $('seachkeyword').val()
+    );
+  });
+
   searchController.index = function(ctx, next) {
     // load from context
     location = ctx.params[1];
@@ -13,11 +20,12 @@
       location: location,
       page: page,
     };
+
     jobs.loadJobs(query, jobsView.drawJobs);
-
+    events.loadEvents(query , eventsView.drawEvents)
     // TODO: load/display events
-  };
 
+  };
   // exports
   module.searchController = searchController;
 })(window);
