@@ -42,7 +42,7 @@ Parameters:
       data: {
         q: query.query,
         l: query.location,
-        start: PAGE_SIZE * (query.page - 1),
+        start: PAGE_SIZE * ((query.page || 1) - 1),
         limit: PAGE_SIZE,
         sort: 'relevance',
         radius: query.radius || 25,
@@ -73,6 +73,7 @@ Parameters:
           url: r.url,
         });
       });
+
       next(loadedJobs);
     })
   };
