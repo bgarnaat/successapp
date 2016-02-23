@@ -13,11 +13,12 @@
       location: location,
       page: page,
     };
+
     jobs.loadJobs(query, jobsView.drawJobs);
     events.loadEvents(query , eventsView.drawEvents)
     // TODO: load/display events
-  };
 
+  };
   // exports
   module.searchController = searchController;
 })(window);
