@@ -17,7 +17,7 @@ Parameters:
 (function(module) {
   var jobs = {};
 
-  var PAGE_SIZE = 10;
+  var PAGE_SIZE = 5;
 
   /* query should have:
     query: search string stuff

@@ -36,7 +36,7 @@
   <body>
     <!-- NAV BAR -->
     <header class="topsection">
-      <img src="/img/successapplogo.png" class="logo">
+      <a href="/"><img src="/img/successapplogo.png" class="logo"></a>
       <nav class="main-nav">
         <ul class="nav-ul">
           <li class="nav-target"><a href="#" class="nav-link">About</a></li>
@@ -63,24 +63,29 @@ $('.example1').wmuSlider();
 <!-- =================================================================== -->
 <main>
   <!-- PLACEHOLDER IMAGE -->
-  <section class="homepageimage">
-    <img src="/img/search.png">
-  </section>
-  <!-- SEARCH FORM -->
-  <section class="input-section">
-    <article class="searchbox1">
-      <input id="search-keywords" class="searchbox" type="text" placeholder="Job Title, Keywords, or Company Name">
-    </article>
-    <article class="searchbox2">
-      <input id="search-location" class="searchbox" type="text" placeholder="City, State, or Zip Code">
-    </article>
-  </section>
-  <!-- SUBMIT BUTTON -->
-  <section class="submitsection">
-    <button id="button" class="submitbutton" type="button" name="button">Land Your Next Job!</button>
+  <section class="landingpage">
+    <section class="homepageimage">
+      <h1 class="slogan">Search for jobs. Find events. Make connections. Empower your interview.</h1>
+      <img src="/img/search.png">
+    </section>
+    <!-- SEARCH FORM -->
+    <section class="input-section">
+      <article class="searchbox1">
+        <input id="search-keywords" class="searchbox" type="text" placeholder="Job Title, Keywords, or Company Name">
+      </article>
+      <article class="searchbox2">
+        <input id="search-location" class="searchbox" type="text" placeholder="City, State, or Zip Code">
+      </article>
+    </section>
+    <!-- SUBMIT BUTTON -->
+    <section class="submitsection">
+      <button id="button" class="submitbutton" type="button" name="button">Land Your Next Job!</button>
+    </section>
   </section>
   <!-- JOB SECTION -->
-  <section id="jobsection" class="tab-content"></section>
+  <h1 class="jobs">JOBS</h1>
+  <section id="jobsection" class="tab-content">
+  </section>
   <!-- EVENT SECTION -->
   <section id="eventsection" class="tab-content"></section>
 
