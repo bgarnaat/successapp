@@ -12,6 +12,8 @@
 (function(module) {
   var events = {};
 
+  var PAGE_SIZE = 10;
+
   events.loadEvents = function(query, page, next) {
 
     $.ajax({
@@ -19,6 +21,27 @@
             query ? '?' + query : '',
       type: 'GET',
       headers: {'Authorization': 'Bearer ' + key_eb},
+
+      dataType: 'json',
+      data: {
+        q: query.query,
+        l: query.location,
+        start: PAGE_SIZE * (query.page - 1),
+        limit: PAGE_SIZE,
+        // sort: 'relevance',
+        radius: query.radius || 25,
+      },
+
+      dataType: 'json',
+      data: {
+        q: query.query,
+        l: query.location,
+        start: PAGE_SIZE * (query.page -1),
+        limit: PAGE_SIZE,
+        // sort: 'relevance',
+        // radius: query.radius || 25,
+      },
+
       success: function(data, message, xhr) {
         console.log('xhr: ');
         console.log(xhr);
