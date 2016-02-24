@@ -152,7 +152,8 @@
   max-width: 100%;
   padding-left: 5%;
   padding-right: 5%;
-  padding-bottom: 1%;
+  padding-bottom: 10px;
+  padding-top: 0px;
   border-bottom: dashed 1px black;
   background-color: none;
 }
@@ -169,7 +170,6 @@
 }
 
 #job-pages {
-  /*align-content: flex-end;*/
   padding-top: 3%;
   padding-left: 1%;
   align-items: baseline;
@@ -189,11 +189,6 @@
   color: #333333;
   cursor: pointer;
 }
-
-/*.page-number:hover {
-  cursor: pointer;
-}*/
-
 
 /*EVENT SECTION*/
 
@@ -234,6 +229,7 @@
   padding-left: 5%;
   padding-right: 5%;
   padding-bottom: 1%;
+  border-bottom: dashed 1px black;
   background-color: none;
 }
 
@@ -256,7 +252,8 @@
 
 .event_location {
   font-family: "Lato";
-  margin-bottom: -15px;
+  padding-bottom: 10px;
+  /*margin-bottom: -15px;*/
 }
 
 .event-expand {
