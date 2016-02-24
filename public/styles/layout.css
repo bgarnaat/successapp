@@ -1,1 +1,19 @@
-/*LAYOUT CSS*/
+.lists-section {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+
+.jobscontainer {
+  width: 90%;
+  flex-direction: column;
+  padding-right: 3%;
+  padding-left: 3%;
+}
+
+.eventcontainer {
+  width: 50%;
+  flex-direction: column;
+  padding-left: 3%;
+  padding-right: 3%;
+}

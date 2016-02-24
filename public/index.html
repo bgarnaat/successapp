@@ -27,7 +27,7 @@
       <article class="event_listing">
         <h1 class="event_name">{{name}}</h1>
         <p class="event_company">{{category_id}}</p>
-        <p class="event_date">{{time}}></p>
+        <p class="event_date">{{time}}</p>
         <p class="event_location">{{venue_id}}</p>
       </article>
     </script>
@@ -84,11 +84,18 @@ $('.example1').wmuSlider();
     </section>
   </section>
   <!-- JOB SECTION -->
-  <h1 class="jobs">JOBS</h1>
-  <section id="jobsection" class="tab-content">
+  <section class="lists-section">
+    <section class="jobscontainer">
+      <h1 class="jobs">JOBS</h1>
+      <section id="jobsection" class="tab-content"></section>
+    </section>
+
+    <!-- EVENT SECTION -->
+    <section class="eventcontainer">
+      <h1 class="events">EVENTS</h1>
+      <section id="eventsection" class="tab-content"></section>
+    </section>
   </section>
-  <!-- EVENT SECTION -->
-  <section id="eventsection" class="tab-content"></section>
 </main>
 
 <footer>
