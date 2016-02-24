@@ -32,16 +32,17 @@
         <p class="event-location">{{venue.name}}</p>
         <div class="event-expand">
           <p class="event-category"><b>Category:</b> {{category.name}}</p>
-          <p class="event-subcategory">{{subcategory.name}}</p>
+          {{#if subcategory.name}}
+          <p class="event-subcategory"><b>Subcategory:</b> {{subcategory.name}}</p>
+          {{/if}}
           <p class="event-start"><b>Start:</b> {{start.local}}</p>
           <p class="event-end"><b>End:</b> {{end.local}}</p>
           <p class="event-duration"><b>Duration:</b> {{duration}}</p>
           <p class="event-organizer"><b>Organizer:</b> {{organizer}}</p>
           <p class="event-venue-name"><b>Venue:</b> {{venue.name}}</p>
-          <p class="event-venue-addess-1"><b>Address:</b> {{venue.address.address_1}}</p>
+          <p class="event-venue-addess-1"><b>Address:</b> {{venue.address.address_1}} {{venue.address.address_2}}</p>
           <p class="event-capacity"><b>Capacity:</b> {{capacity}}</p>
-            <p class="event-venue-addess-2">{{venue.address.address_2}}</p>
-          <p class="event-url"><a href={{url}}>{{url}}</a></p>
+          <p class="event-url"><b>Register:</b> <a href={{url}}>{{url}}</a></p>
         </div>
       </article>
     </script>
