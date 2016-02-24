@@ -5,7 +5,7 @@ var requestProxy = require('express-request-proxy'),
 
 // Indeed API proxying
 var proxyIndeed = function(request, response) {
-  console.log('Routing Indeed request for', request.params[0]);
+  console.log('Routing Indeed request for', request.originalUrl);
   (requestProxy({
     url: 'http://api.indeed.com/ads/apisearch',
     query: {
@@ -22,7 +22,7 @@ app.get('/indeed/*', proxyIndeed);
 
 // eventbrite API proxying
 var proxyEvent = function(request, response) {
-  console.log('Routing Eventbrite request for ', request.params[0]);
+  console.log('Routing Eventbrite request for', request.originalUrl);
   (requestProxy({
     url: 'https://www.eventbriteapi.com/v3/events/search/',
     headers: {'Authorization': 'Bearer ' + process.env.KEY_EVENTBRITE}
