@@ -17,14 +17,18 @@ Parameters:
 (function(module) {
   var jobs = {};
 
-  var PAGE_SIZE = 5;
+  jobs.PAGE_SIZE = 5;
+  var currentQuery;
 
-  /* query should have:
-    query: search string stuff
-    location: location
-    radius: radius in miles (optional)
-  page is a positive integer
-  next is the callback
+  /*
+  Parameters:
+    query can be null or some query info.
+      If we are opening a new query, the query param should have:
+        query: search string stuff
+        location: location
+        radius: radius in miles (optional)
+    page is a positive integer
+    next is the callback
 
   Returns job objects to the callback:
     title: title of the entry
@@ -34,24 +38,43 @@ Parameters:
     description: short description of the job
     url: url to link to
   */
-  jobs.loadJobs = function(query, next) {
+  jobs.loadJobs = function(query, page, callback) {
+    if (query) { // this could be null if we are just paging around
+      currentQuery = query; // update our query info
+    }
+
     indeedQuery = $.ajax({
       type: 'GET',
       url: '/indeed/',
       dataType: 'json',
       data: {
-        q: query.query,
-        l: query.location,
-        start: PAGE_SIZE * ((query.page || 1) - 1),
-        limit: PAGE_SIZE,
+        q: currentQuery.query,
+        l: currentQuery.location,
+        start: jobs.PAGE_SIZE * ((page || 1) - 1),
+        limit: jobs.PAGE_SIZE,
         sort: 'relevance',
-        radius: query.radius || 25,
+        radius: currentQuery.radius || 25,
       },
     });
+
     $.when(indeedQuery).done(function(data) {
       // here we have our data
       // ╰( ͡° ͜ʖ ͡° )つ──☆・ﾟ
-      /* Fields we get back per object in data.results:
+      /*
+      Fields in the returned data as a whole:
+        results - actual data
+        version - 2 for us
+        start - 1-based ordinal of the first item in this result set
+        radius - radius in miles that we passed
+        totalResults - total number of results
+        end - 1-based ordinal of the last item in this result set
+        dupefilter - false for us
+        location - location we passed
+        query - query we passed
+        pageNumber - page number
+        highlight - probably false for us
+
+      Fields we get back per object in data.results:
         company
         formattedLocation
         formattedRelativeTime
@@ -62,7 +85,6 @@ Parameters:
         url
       */
       loadedJobs = [];
-      console.log(loadedJobs);  
       data.results.forEach(function(r) {
         loadedJobs.push({
           title: r.jobtitle,
@@ -74,7 +96,7 @@ Parameters:
         });
       });
 
-      next(loadedJobs);
+      callback(loadedJobs, data.pageNumber, data.totalResults);
     })
   };
 

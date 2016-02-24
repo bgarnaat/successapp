@@ -33,7 +33,7 @@
       location: location,
     };
 
-    jobs.loadJobs(query, jobsView.drawJobs);
+    jobs.loadJobs(query, 1, jobsView.drawJobs);
     events.loadEvents(query, eventsView.drawEvents);
 
     ctx.handled = true;
