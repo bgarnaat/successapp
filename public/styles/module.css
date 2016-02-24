@@ -1,6 +1,6 @@
 /*LANDING PAGE*/
 
-.landingpage {
+.landing-page {
   height: 100%;
   justify-content: center;
 }
@@ -12,7 +12,7 @@
   padding-top: 10%;
 }
 
-.homepageimage {
+.homepage-image {
   justify-content: center;
   text-align: center;
   padding-top: 0px;
@@ -21,7 +21,7 @@
 
 /*NAV BAR*/
 
-.topsection {
+.top-section {
   position: fixed;
   background-color: #333333;
   border-bottom: solid 6px #33CC33;
@@ -68,15 +68,15 @@
   padding-bottom: 20px;
 }
 
-.searchbox1 {
+.search-box-1 {
   padding-right: 40px;
 }
 
-.searchbox2 {
+.search-box-2 {
   padding-left: 40px;
 }
 
-.searchbox {
+.search-box {
   width: 300px;
   height: 40px;
   text-align: center;
@@ -91,14 +91,14 @@
 
 /*SUBMIT SECTION*/
 
-.submitsection {
+.submit-section {
   width: 100%;
   display: flex;
   justify-content: center;
   padding-top: 25px;
 }
 
-.submitbutton {
+.submit-button {
   width: 300px;
   height: 40px;
   background-color: #33CC33;
@@ -124,7 +124,7 @@
   color: #333333;
 }
 
-#jobsection {
+#job-section {
   /*display: none;*/
   display: flex;
   flex-direction: column;
@@ -147,7 +147,7 @@
   background-color: white;
 }
 
-.joblisting {
+.job-listing {
   width: 90%;
   max-width: 100%;
   padding-left: 5%;
@@ -158,14 +158,14 @@
   background-color: none;
 }
 
-.jobtitle {
+.job-title {
   font-family: "Lato";
   font-weight: 600;
   font-size: 18px;
   margin-bottom: -15px;
 }
 
-.companyname {
+.job-company-name {
   font-family: "Lato";
 }
 
@@ -202,7 +202,7 @@
   color: #333333;
 }
 
-#eventsection {
+#event-section {
   /*display: none;*/
   margin-top: 0%;
   margin-left: 3%;
@@ -223,7 +223,7 @@
   background-color: white;
 }
 
-.event_listing {
+.event-listing {
   width: 90%;
   max-width: 100%;
   padding-left: 5%;
@@ -233,24 +233,24 @@
   background-color: none;
 }
 
-.event_name {
+.event-name {
   font-family: "Lato";
   font-weight: 600;
   font-size: 18px;
   margin-bottom: -15px;
 }
 
-.event_company {
+.event-company {
   font-family: "Lato";
   margin-bottom: -15px;
 }
 
-.event_date {
+.event-date {
   font-family: "Lato";
   margin-bottom: -15px;
 }
 
-.event_location {
+.event-location {
   font-family: "Lato";
   padding-bottom: 10px;
   /*margin-bottom: -15px;*/

@@ -1,10 +1,10 @@
 (function(module) {
   var eventsView = {};
 
-  var eventsTemplate = Handlebars.compile($('#events_template').text());
+  var eventsTemplate = Handlebars.compile($('#events-template').text());
 
   eventsView.drawEvents = function(events) {
-    var $eventSection = $('#eventsection');
+    var $eventSection = $('event-section');
     $eventSection.empty();
     events.forEach(function(a) {
       var $eventElement = $(eventsTemplate(a));
