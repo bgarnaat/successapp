@@ -6,6 +6,8 @@ page(
   searchController.index
 );
 
+page('/about', aboutController.index);
+
 // fallback
 page('*', function(ctx, next) {
   if (!ctx.handled) {
