@@ -27,10 +27,23 @@
     <script id="events-template" type="text/x-handlebars-template">
       <article class="event-listing">
         <h1 class="event-name">{{name}}</h1>
-        <p class="event-company">{{category.name}}</p>
+        <p class="event-company">{{organizer}}</p>
         <p class="event-date">{{time}}</p>
         <p class="event-location">{{venue.name}}</p>
-        <div class="event-expand">..more info..</div>
+        <div class="event-expand">
+          <p class="event-category"><b>Category:</b> {{category.name}}</p>
+          {{#if subcategory.name}}
+          <p class="event-subcategory"><b>Subcategory:</b> {{subcategory.name}}</p>
+          {{/if}}
+          <p class="event-start"><b>Start:</b> {{start.local}}</p>
+          <p class="event-end"><b>End:</b> {{end.local}}</p>
+          <p class="event-duration"><b>Duration:</b> {{duration}}</p>
+          <p class="event-organizer"><b>Organizer:</b> {{organizer}}</p>
+          <p class="event-venue-name"><b>Venue:</b> {{venue.name}}</p>
+          <p class="event-venue-addess-1"><b>Address:</b> {{venue.address.address_1}} {{venue.address.address_2}}</p>
+          <p class="event-capacity"><b>Capacity:</b> {{capacity}}</p>
+          <p class="event-url"><b>Register:</b> <a href={{url}}>{{url}}</a></p>
+        </div>
       </article>
     </script>
 
