@@ -4,7 +4,7 @@
   var eventsTemplate = Handlebars.compile($('#events-template').text());
 
   eventsView.drawEvents = function(events) {
-    var $eventSection = $('event-section');
+    var $eventSection = $('#event-section');
     $eventSection.empty();
     events.forEach(function(a) {
       var $eventElement = $(eventsTemplate(a));
