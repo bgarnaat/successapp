@@ -43,6 +43,7 @@ parameters:
         var eventDay = Math.floor((ourTime - ourTimeZone) / 86400000);
         var today = Math.floor((Date.now() - ourTimeZone) / 86400000);
         var daysFromNow = eventDay - today;
+        var eventLength = (new Date(r.end.utc).getTime() - new Date(r.start.utc).getTime()) / 3600000;
         if (daysFromNow == 0) {
           daysFromNow = ' (today)';
         } else if (daysFromNow == 1) {
@@ -51,13 +52,23 @@ parameters:
           daysFromNow = ' (' + daysFromNow + ' days from now)';
         }
 
+        if (eventLength < 24) {eventLength += ' hours';}
+        else if (eventLength < 168) {eventLength = Math.floor(eventLength / 24) + ' days';}
+        else if (eventLength < 5040) {eventLength = Math.floor(eventLength / 168) + ' weeks';}
+        else if (eventLength < 60480) {eventLength = Math.floor(eventLength / 5040) + ' months';}
+
         loadedEvents.push({
-          name: r.name.text,
+          capacity: r.capacity,
           category: r.category,
+          description: r.description.text,
+          duration: eventLength,
+          end: r.end,
+          logo: r.logo,
+          name: r.name.text,
+          organizer: r.organizer.name,
+          start: r.start,
           subcategory: r.subcategory,
-          organizer: r.organizer,
           time: r.start.local.substring(0,10) + daysFromNow,
-          description: r.description,
           url: r.url,
           venue: r.venue
         });
