@@ -24,6 +24,7 @@
     var location = ctx.params[1];
     var search = ctx.params[3];
 
+    // IF WE DO A SEARCH
     if (location || search) {
       if (location) {
         location = decodeURIComponent(location);
@@ -33,6 +34,11 @@
         search = decodeURIComponent(search);
         $('#search-keywords').val(search);
       }
+
+      $('html,body').animate(
+        { scrollTop: $('.lists-section').offset().top},
+        'slow'
+      );
 
       // $('.jobs').show();
       // $('#jobsection').slideDown();
