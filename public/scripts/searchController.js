@@ -21,20 +21,31 @@
   // search result controller
   searchController.index = function(ctx, next) {
     // load from context
-    var location = decodeURIComponent(ctx.params[1]);
-    var search = decodeURIComponent(ctx.params[3]);
+    var location = ctx.params[1];
+    var search = ctx.params[3];
 
-    // $('.jobs').show();
-    // $('#jobsection').slideDown();
+    if (location || search) {
+      if (location) {
+        location = decodeURIComponent(location);
+        $('#search-location').val(location);
+      }
+      if (search) {
+        search = decodeURIComponent(search);
+        $('#search-keywords').val(search);
+      }
 
-    // build model query
-    var query = {
-      query: search,
-      location: location,
-    };
+      // $('.jobs').show();
+      // $('#jobsection').slideDown();
 
-    jobs.loadJobs(query, 1, jobsView.drawJobs);
-    events.loadEvents(query, eventsView.drawEvents);
+      // build model query
+      var query = {
+        query: search,
+        location: location,
+      };
+
+      jobs.loadJobs(query, 1, jobsView.drawJobs);
+      events.loadEvents(query, eventsView.drawEvents);
+    }
 
     ctx.handled = true;
     next();

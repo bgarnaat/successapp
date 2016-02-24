@@ -4,10 +4,15 @@
   var eventsTemplate = Handlebars.compile($('#events_template').text());
 
   eventsView.drawEvents = function(events) {
-    $eventSection = $('#eventsection');
+    var $eventSection = $('#eventsection');
     $eventSection.empty();
     events.forEach(function(a) {
-      $eventSection.append(eventsTemplate(a));
+      var $eventElement = $(eventsTemplate(a));
+      // attach handler for expanded information
+      $eventElement.click(function() {
+        $(this).find('.event-expand').toggle();
+      });
+      $eventSection.append($eventElement);
     });
   };
 
