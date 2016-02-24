@@ -38,15 +38,21 @@ parameters:
       // event.current = data.events[9];
       data.events.forEach(function(r) {
         // TODO:  use cat_id, subcat_id, venue_id to load associated data
+        var ourTimeZone = new Date().getTimezoneOffset() * 60000;
+        var ourTime = new Date(r.start.utc).getTime();
+        var eventDay = Math.floor((ourTime - ourTimeZone) / 86400000);
+        var today = Math.floor((Date.now() - ourTimeZone) / 86400000);
+        var daysFromNow = eventDay - today;
+
         loadedEvents.push({
           name: r.name.text,
-          category_id: r.category,
-          subcategory_id: r.subcategory,
-          organizer_id: r.organizer,
-          time: new Date(r.start.local).toLocaleDateString(),
+          category: r.category,
+          subcategory: r.subcategory,
+          organizer: r.organizer,
+          time: r.start.local.substring(0,10) + ' (' + daysFromNow + ' days from now)',
           description: r.description,
           url: r.url,
-          venue_id: r.venue
+          venue: r.venue
         });
       });
 
