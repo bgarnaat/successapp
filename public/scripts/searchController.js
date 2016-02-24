@@ -41,7 +41,7 @@
       );
 
       // $('.jobs').show();
-      // $('#jobsection').slideDown();
+      // $('#job-section').slideDown();
 
       // build model query
       var query = {

@@ -17,19 +17,19 @@
 
     <!-- JOB TEMPLATE -->
     <script id="job-template" type="text/x-handlebars-template">
-      <article class="joblisting">
-        <h1 class="jobtitle">{{title}}</h1>
-        <p class="companyname">{{company}} - {{location}}</p>
+      <article class="job-listing">
+        <h1 class="job-title">{{title}}</h1>
+        <p class="job-company-name">{{company}} - {{location}}</p>
       </article>
     </script>
 
     <!-- EVENTBRITE TEMPLATE -->
-    <script id="events_template" type="text/x-handlebars-template">
-      <article class="event_listing">
-        <h1 class="event_name">{{name}}</h1>
-        <p class="event_company">{{category.name}}</p>
-        <p class="event_date">{{time}}</p>
-        <p class="event_location">{{venue.name}}</p>
+    <script id="events-template" type="text/x-handlebars-template">
+      <article class="event-listing">
+        <h1 class="event-name">{{name}}</h1>
+        <p class="event-company">{{category.name}}</p>
+        <p class="event-date">{{time}}</p>
+        <p class="event-location">{{venue.name}}</p>
         <div class="event-expand">..more info..</div>
       </article>
     </script>
@@ -37,7 +37,7 @@
     <!-- ABOUT TEMPLATE -->
     <script id="about-template" type="text/x-handlebars-template">
       <section>
-        <div class="about_container">
+        <div class="about-container">
           <h1><strong>{{aboutHeader}}</strong></h1>
           <h3>{{{aboutUs}}}</h3>
         </div>
@@ -48,7 +48,7 @@
   <!-- BODY -->
   <body>
     <!-- NAV BAR -->
-    <header class="topsection">
+    <header class="top-section">
       <a href="/"><img src="/img/successapplogo.png" class="logo"></a>
       <nav class="main-nav">
         <ul class="nav-ul">
@@ -60,65 +60,54 @@
       </nav>
     </header>
 
-    <!-- SLIDER -->
-    <!-- <div class="wmuSlider example1">
-    <div class="wmuSliderWrapper">
-      <article><p>Find the right cloud Hosting Without the Fluffy  white stuff</p> <img src="/img/search.png"/> </article>
-      <article><p>Lorem ipsum dolor sit amet elit dolore magna aliqua</p> <img src="/img/ticket.png"/> </article>
-      <article><p>Duis aute irure dolor in velit esse cillum dolore labore et dolore</p> <img src="/img/hands.png"/> </article>
-      <article><p>Sed do eiusmod tempor labore et dolore magna aliqua</p> <img src="/img/mountain.png"/> </article>
-    </div>
-    <script>
-    $('.example1').wmuSlider();
-    </script> -->
-
     <!-- MAIN SECTION -->
     <!-- =================================================================== -->
     <main>
 
       <!-- FIRST PAGE -->
-      <section class="landingpage">
+      <section class="landing-page">
         <!-- PLACEHOLDER IMAGE -->
-        <section class="homepageimage">
+        <section class="homepage-image">
           <h1 class="slogan">Search for jobs. Find events. Make connections. Empower your interview.</h1>
           <img src="/img/search.png">
         </section>
         <!-- SEARCH FORM -->
         <section class="input-section">
-          <article class="searchbox1">
-            <input id="search-keywords" class="searchbox" type="text" placeholder="Job Title, Keywords, or Company Name">
+          <article class="search-box-1">
+            <input id="search-keywords" class="search-box" type="text" placeholder="Job Title, Keywords, or Company Name">
           </article>
-          <article class="searchbox2">
-            <input id="search-location" class="searchbox" type="text" placeholder="City, State, or Zip Code">
+          <article class="search-box-2">
+            <input id="search-location" class="search-box" type="text" placeholder="City, State, or Zip Code">
           </article>
         </section>
         <!-- SUBMIT BUTTON -->
-        <section class="submitsection">
-          <button id="button" class="submitbutton" type="button" name="button">Land Your Next Job!</button>
+        <section class="submit-section">
+          <button id="button" class="submit-button" type="button" name="button">Land Your Next Job!</button>
         </section>
       </section>
 
       <!-- SECOND PAGE -->
       <section class="lists-section">
         <!-- JOB SECTION -->
-        <section class="jobscontainer">
+        <section class="jobs-container">
           <h1 class="jobs">JOBS</h1>
-          <section id="jobsection" class="tab-content">
+          <section id="job-section" class="tab-content">
             <div id="job-pages"></div>
           </section>
         </section>
 
         <!-- EVENT SECTION -->
-        <section class="eventcontainer">
+        <section class="event-container">
           <h1 class="events">EVENTS</h1>
-          <section id="eventsection" class="tab-content"></section>
+          <section id="event-section" class="tab-content"></section>
         </section>
       </section>
 
       <!-- THIRD PAGE -->
+
       <section id="about">
-        <section class="aboutcontainer">
-          <section class="about"></section>
+        <section class="about-container">
+          <section id="about" class="tab-content"></section>
         </section>
       </section>
 
@@ -133,14 +122,8 @@
     <script type="text/javascript" src="/vendors/scripts/handlebars.js"></script>
     <script type="text/javascript" src="/vendors/scripts/page.js"></script>
 
-    <!-- SLIDER SCRIPTS -->
-    <!-- <script type="text/javascript" src="/vendors/scripts/jquery.nivo.slider.js"></script>
-    <script type="text/javascript" src="/vendors/scripts/jquery.sliderTabs.min.js"></script>
-    <script type="text/javascript" src="/vendors/scripts/jquery.wmuSlider.js"></script>
-    <script type="text/javascript" src="/vendors/scripts/modernizr.custom.min.js"></script> -->
 
     <!-- SCRIPTS -->
-    <!-- <script type="text/javascript" src="/scripts/events.js"></script> -->
     <script type="text/javascript" src="/scripts/jobs.js"></script>
     <script type="text/javascript" src="/scripts/events.js"></script>
     <script type="text/javascript" src="/scripts/about.js"></script>
