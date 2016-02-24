@@ -126,6 +126,8 @@
 
 #jobsection {
   /*display: none;*/
+  display: flex;
+  flex-direction: column;
   margin-top: 0%;
   margin-left: 3%;
   margin-right: 3%;
@@ -166,16 +168,32 @@
   font-family: "Lato";
 }
 
+#job-pages {
+  /*align-content: flex-end;*/
+  padding-top: 3%;
+  padding-left: 1%;
+  align-items: baseline;
+  cursor: default;
+}
+
 .page-number {
   font-family: "Lato";
   font-size: 12px;
   color: #33CC33;
+  padding-right: 5px;
 }
 
 .page-number.other-page-link {
   font-family: "Lato";
   font-size: 12px;
+  color: #333333;
+  cursor: pointer;
 }
+
+/*.page-number:hover {
+  cursor: pointer;
+}*/
+
 
 /*EVENT SECTION*/
 
