@@ -24,6 +24,9 @@
     var location = decodeURIComponent(ctx.params[1]);
     var search = decodeURIComponent(ctx.params[3]);
 
+    $('#search-location').val(location);
+    $('#search-keywords').val(search);
+
     // $('.jobs').show();
     // $('#jobsection').slideDown();
 
