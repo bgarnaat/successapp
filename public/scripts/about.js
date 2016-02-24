@@ -14,6 +14,7 @@
 
   About.all = [];
   About.loadAll = function(rawData) {
+    console.log('LOADING ALL ABOUTS');
     About.all = rawData.map(function(e) {
       return new About(e);
     });
