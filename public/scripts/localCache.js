@@ -18,14 +18,14 @@
       }).done(function(data, message, xhr) {
         // save the etag and send the data along
         console.log(xhr.getAllResponseHeaders());
-        localStorage.setItem('etag:' + key, xhr.getResponseHeader('ETag:' + key));
+        localStorage.setItem('etag:' + key, xhr.getResponseHeader('ETag'));
         localStorage.setItem(key, data);
         next(data);
       });
     };
 
     var cached = localStorage.getItem(key);
-    var eTag = localStorage.getItem('eTag:' + key);
+    var eTag = localStorage.getItem('etag:' + key);
     var url = '/data/' + key + '.json';
 
     if (!cached || !eTag) {
