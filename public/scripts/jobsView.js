@@ -6,7 +6,7 @@
   jobsView.drawJobs = function(jobsData, currentPage, totalResults) {
     var lastPageNumber = Math.ceil(totalResults / jobs.PAGE_SIZE);
 
-    var $jobSection = $('#jobsection');
+    var $jobSection = $('#job-section');
     var $jobPages = $('#job-pages');
     // empty out pages and job listings
     $jobPages.empty().siblings().remove();

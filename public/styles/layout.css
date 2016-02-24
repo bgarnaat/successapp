@@ -6,13 +6,13 @@
   background-color: none;
 }
 
-.jobscontainer {
+.jobs-container {
   width: 80%;
   flex-direction: column;
   background-color: none;
 }
 
-.eventcontainer {
+.event-container {
   width: 80%;
   flex-direction: column;
   background-color: none;
