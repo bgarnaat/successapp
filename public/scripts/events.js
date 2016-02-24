@@ -14,7 +14,7 @@ parameters:
 (function(module) {
   var events = {};
 
-  var PAGE_SIZE = 10;
+  var PAGE_SIZE = 5;
 
   events.loadEvents = function(query, next) {
     eventbriteQuery = $.ajax({
@@ -27,27 +27,36 @@ parameters:
         'location.within': (query.radius || 25) + 'mi',
         // start: PAGE_SIZE * (query.page - 1),
         sort_by: 'date',
+        expand: 'category,organizer,subcategory,venue',
       },
     });
 
     $.when(eventbriteQuery).done(function(data) {
       // TODO:  list returned data (some or all?)
+      console.log('data.events: ', data.events);
       loadedEvents = [];
+      // event.current = data.events[9];
       data.events.forEach(function(r) {
         // TODO:  use cat_id, subcat_id, venue_id to load associated data
+        var ourTimeZone = new Date().getTimezoneOffset() * 60000;
+        var ourTime = new Date(r.start.utc).getTime();
+        var eventDay = Math.floor((ourTime - ourTimeZone) / 86400000);
+        var today = Math.floor((Date.now() - ourTimeZone) / 86400000);
+        var daysFromNow = eventDay - today;
+
         loadedEvents.push({
           name: r.name.text,
-          category_id: r.category_id,
-          subcategory_id: r.subcategory_id,
-          organizer_id: r.organizer_id,
-          time: new Date(r.start.local),
+          category: r.category,
+          subcategory: r.subcategory,
+          organizer: r.organizer,
+          time: r.start.local.substring(0,10) + ' (' + daysFromNow + ' days from now)',
           description: r.description,
           url: r.url,
-          venue_id: r.venue_id
+          venue: r.venue
         });
       });
 
-      console.log(loadedEvents);
+      console.log('loadedEvents: ', loadedEvents);
       next(loadedEvents);
     });
   }
