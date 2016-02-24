@@ -7,12 +7,12 @@
       About.all.forEach(function(a) {
         $(section).append(a.toHtml('#about-template'));
       });
-    } else {
+    } else if (section == '#resource') {
       About.all.forEach(function(a) {
         $(section).append(a.toHtml('#resource-template'));
       });
     }
   };
-  
+
   module.aboutView = aboutView;
 })(window);

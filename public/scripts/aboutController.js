@@ -5,7 +5,7 @@
   aboutView.initIndexPage('#about');
 
   aboutController.index = function() {
-    console.log('jey');
+    console.log('hey');
     $('#about').fadeIn('slow');
   };
 

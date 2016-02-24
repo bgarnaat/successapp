@@ -44,7 +44,6 @@
     }
   };
 
-
   module.About = About;
 
 }(window));
