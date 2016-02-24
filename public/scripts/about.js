@@ -1,14 +1,14 @@
-
 (function(module) {
 
   function About(opts) {
     for (var i in opts) {
       this[i] = opts[i];
+      console.log(i);
     }
   };
 
-  About.prototype.toHtml = function() {
-    var template = Handlebars.compile($('#about-template').text());
+  About.prototype.toHtml = function(temp) {
+    var template = Handlebars.compile($(temp).text());
     return template(this);
   }
 
@@ -19,7 +19,6 @@
     });
  };
 
-  About.fetchAll(localStorage.rawAbout, 'rawAbout', 'about.json')
   About.fetchAll = function(rawData, raw, dataUrl) {
     if (rawData) {
       $.ajax({
@@ -44,7 +43,6 @@
       });
     }
   };
-
 
 
   module.About = About;

@@ -14,10 +14,6 @@
     <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic,900italic,900,300italic,300' rel='stylesheet' type='text/css'>
 
     <!-- HANDLEBAR TEMPLATES -->
-    <!-- ABOUT TEMPLATE -->
-    <script id="about-template" type="text/x-handlebars-template">
-      
-    </script>
 
     <!-- JOB TEMPLATE -->
     <script id="job-template" type="text/x-handlebars-template">
@@ -26,6 +22,7 @@
         <p class="companyname">{{company}} - {{location}}</p>
       </article>
     </script>
+
     <!-- EVENTBRITE TEMPLATE -->
     <script id="events_template" type="text/x-handlebars-template">
       <article class="event_listing">
@@ -36,6 +33,17 @@
         <div class="event-expand">..more info..</div>
       </article>
     </script>
+
+    <!-- ABOUT TEMPLATE -->
+    <script id="about_template" type="text/x-handlebars-template">
+      <section>
+        <div class="about_container">
+          <h1><strong>{{aboutHeader}}</strong></h1>
+          <h3>{{{aboutUs}}}</h3>
+        </div>
+      </section>
+    </script>
+
   </head>
   <!-- BODY -->
   <body>
@@ -45,8 +53,8 @@
       <nav class="main-nav">
         <ul class="nav-ul">
           <li class="nav-target"><a href="#" class="nav-link">Search</a></li>
-          <li class="nav-target"><a href="#" class="nav-link">About</a></li>
-          <li class="nav-target"><a href="#" class="nav-link">Resources</a></li>
+          <li class="nav-target" data-link="about"><a href="#" class="nav-link">About</a></li>
+          <li class="nav-target" data-link="resource"><a href="#" class="nav-link">Resources</a></li>
           <li class="nav-target"><a href="#" class="nav-link">Connect</a></li>
         </ul>
       </nav>
@@ -55,79 +63,93 @@
     <!-- SLIDER -->
     <!-- <div class="wmuSlider example1">
     <div class="wmuSliderWrapper">
-    <article><p>Find the right cloud Hosting Without the Fluffy  white stuff</p> <img src="/img/search.png"/> </article>
-    <article><p>Lorem ipsum dolor sit amet elit dolore magna aliqua</p> <img src="/img/ticket.png"/> </article>
-    <article><p>Duis aute irure dolor in velit esse cillum dolore labore et dolore</p> <img src="/img/hands.png"/> </article>
-    <article><p>Sed do eiusmod tempor labore et dolore magna aliqua</p> <img src="/img/mountain.png"/> </article>
-  </div>
-</div>
-<script>
-$('.example1').wmuSlider();
-</script> -->
+      <article><p>Find the right cloud Hosting Without the Fluffy  white stuff</p> <img src="/img/search.png"/> </article>
+      <article><p>Lorem ipsum dolor sit amet elit dolore magna aliqua</p> <img src="/img/ticket.png"/> </article>
+      <article><p>Duis aute irure dolor in velit esse cillum dolore labore et dolore</p> <img src="/img/hands.png"/> </article>
+      <article><p>Sed do eiusmod tempor labore et dolore magna aliqua</p> <img src="/img/mountain.png"/> </article>
+    </div>
+    <script>
+    $('.example1').wmuSlider();
+    </script> -->
 
-<!-- MAIN SECTION -->
-<!-- =================================================================== -->
-<main>
-  <!-- PLACEHOLDER IMAGE -->
-  <section class="landingpage">
-    <section class="homepageimage">
-      <h1 class="slogan">Search for jobs. Find events. Make connections. Empower your interview.</h1>
-      <img src="/img/search.png">
-    </section>
-    <!-- SEARCH FORM -->
-    <section class="input-section">
-      <article class="searchbox1">
-        <input id="search-keywords" class="searchbox" type="text" placeholder="Job Title, Keywords, or Company Name">
-      </article>
-      <article class="searchbox2">
-        <input id="search-location" class="searchbox" type="text" placeholder="City, State, or Zip Code">
-      </article>
-    </section>
-    <!-- SUBMIT BUTTON -->
-    <section class="submitsection">
-      <button id="button" class="submitbutton" type="button" name="button">Land Your Next Job!</button>
-    </section>
-  </section>
-  <!-- JOB SECTION -->
-  <section class="lists-section">
-    <section class="jobscontainer">
-      <h1 class="jobs">JOBS</h1>
-      <section id="jobsection" class="tab-content">
-        <div id="job-pages"></div>
+    <!-- MAIN SECTION -->
+    <!-- =================================================================== -->
+    <main>
+
+      <!-- FIRST PAGE -->
+      <section class="landingpage">
+        <!-- PLACEHOLDER IMAGE -->
+        <section class="homepageimage">
+          <h1 class="slogan">Search for jobs. Find events. Make connections. Empower your interview.</h1>
+          <img src="/img/search.png">
+        </section>
+        <!-- SEARCH FORM -->
+        <section class="input-section">
+          <article class="searchbox1">
+            <input id="search-keywords" class="searchbox" type="text" placeholder="Job Title, Keywords, or Company Name">
+          </article>
+          <article class="searchbox2">
+            <input id="search-location" class="searchbox" type="text" placeholder="City, State, or Zip Code">
+          </article>
+        </section>
+        <!-- SUBMIT BUTTON -->
+        <section class="submitsection">
+          <button id="button" class="submitbutton" type="button" name="button">Land Your Next Job!</button>
+        </section>
       </section>
-    </section>
 
-    <!-- EVENT SECTION -->
-    <section class="eventcontainer">
-      <h1 class="events">EVENTS</h1>
-      <section id="eventsection" class="tab-content"></section>
-    </section>
-  </section>
-</main>
+      <!-- SECOND PAGE -->
+      <section class="lists-section">
+        <!-- JOB SECTION -->
+        <section class="jobscontainer">
+          <h1 class="jobs">JOBS</h1>
+          <section id="jobsection" class="tab-content">
+            <div id="job-pages"></div>
+          </section>
+        </section>
 
-<footer>
-  &copy; 2016 SuccessApp
-</footer>
+        <!-- EVENT SECTION -->
+        <section class="eventcontainer">
+          <h1 class="events">EVENTS</h1>
+          <section id="eventsection" class="tab-content"></section>
+        </section>
+      </section>
 
-<!-- VENDOR SCRIPTS -->
-<script type="text/javascript" src="/vendors/scripts/jquery.js"></script>
-<script type="text/javascript" src="/vendors/scripts/handlebars.js"></script>
-<script type="text/javascript" src="/vendors/scripts/page.js"></script>
+      <!-- THIRD PAGE -->
+      <section class="about">
+        <section class="aboutcontainer">
+          <section id="about" class="tab-content"></section>
+        </section>
+      </section>
 
-<!-- SLIDER SCRIPTS -->
-<!-- <script type="text/javascript" src="/vendors/scripts/jquery.nivo.slider.js"></script>
-<script type="text/javascript" src="/vendors/scripts/jquery.sliderTabs.min.js"></script>
-<script type="text/javascript" src="/vendors/scripts/jquery.wmuSlider.js"></script>
-<script type="text/javascript" src="/vendors/scripts/modernizr.custom.min.js"></script> -->
+    </main>
 
-<!-- SCRIPTS -->
-<!-- <script type="text/javascript" src="/scripts/events.js"></script> -->
-<script type="text/javascript" src="/scripts/jobs.js"></script>
-<script type="text/javascript" src="/scripts/events.js"></script>
-<script type="text/javascript" src="/scripts/jobsView.js"></script>
-<script type="text/javascript" src="/scripts/eventsView.js"></script>
-<script type="text/javascript" src="/scripts/searchController.js"></script>
-<script type="text/javascript" src="/scripts/routes.js"></script>
+    <footer>
+      &copy; 2016 SuccessApp
+    </footer>
 
-</body>
+    <!-- VENDOR SCRIPTS -->
+    <script type="text/javascript" src="/vendors/scripts/jquery.js"></script>
+    <script type="text/javascript" src="/vendors/scripts/handlebars.js"></script>
+    <script type="text/javascript" src="/vendors/scripts/page.js"></script>
+
+    <!-- SLIDER SCRIPTS -->
+    <!-- <script type="text/javascript" src="/vendors/scripts/jquery.nivo.slider.js"></script>
+    <script type="text/javascript" src="/vendors/scripts/jquery.sliderTabs.min.js"></script>
+    <script type="text/javascript" src="/vendors/scripts/jquery.wmuSlider.js"></script>
+    <script type="text/javascript" src="/vendors/scripts/modernizr.custom.min.js"></script> -->
+
+    <!-- SCRIPTS -->
+    <!-- <script type="text/javascript" src="/scripts/events.js"></script> -->
+    <script type="text/javascript" src="/scripts/jobs.js"></script>
+    <script type="text/javascript" src="/scripts/events.js"></script>
+    <script type="text/javascript" src="/scripts/about.js"></script>
+    <script type="text/javascript" src="/scripts/jobsView.js"></script>
+    <script type="text/javascript" src="/scripts/eventsView.js"></script>
+    <script type="text/javascript" src="/scripts/aboutView.js"></script>
+    <script type="text/javascript" src="/scripts/searchController.js"></script>
+    <script type="text/javascript" src="/scripts/aboutController.js"></script>
+    <script type="text/javascript" src="/scripts/routes.js"></script>
+
+  </body>
 </html>
