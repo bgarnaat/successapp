@@ -35,7 +35,6 @@
         type: 'HEAD',
         url: url,
       }).done(function(data, message, xhr) {
-        About.loadAll(JSON.parse(cached));
         var serverETag = xhr.getResponseHeader('eTag');
         if (eTag !== serverETag) {
           // eTag doesn't match, fetch all over again
