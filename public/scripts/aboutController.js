@@ -1,7 +1,7 @@
 (function(module) {
   var aboutController = {};
 
-  About.fetchAll(localStorage.rawAbout, 'rawAbout', 'about.json');
+  localCache.fetch('about', About.loadAll);
   aboutView.initIndexPage('#about');
 
   aboutController.index = function() {
