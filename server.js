@@ -1,7 +1,7 @@
-var requestProxy = require('express-request-proxy'),
-  express = require('express'),
-  port = process.env.PORT || 3000,
-  app = express();
+var requestProxy = require('express-request-proxy');
+var express = require('express');
+var port = process.env.PORT || 3000;
+var app = express();
 
 // Indeed API proxying
 var proxyIndeed = function(request, response) {
@@ -15,7 +15,9 @@ var proxyIndeed = function(request, response) {
       userip: request.ip,
       useragent: request.get('User-Agent'),
     }
-  }))(request, response);
+  }))(request, response, function(err) {
+    console.log('err proxying indeed:', err);
+  });
 };
 
 app.get('/indeed/*', proxyIndeed);
@@ -26,8 +28,11 @@ var proxyEvent = function(request, response) {
   (requestProxy({
     url: 'https://www.eventbriteapi.com/v3/events/search/',
     headers: {'Authorization': 'Bearer ' + process.env.KEY_EVENTBRITE}
-  }))(request, response);
-}
+  }))(request, response, function(err) {
+    console.log('err proxying eventbrite:', err);
+  });
+};
+
 app.get('/eventbrite/*', proxyEvent);
 
 // static files

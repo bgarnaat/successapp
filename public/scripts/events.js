@@ -43,13 +43,20 @@ parameters:
         var eventDay = Math.floor((ourTime - ourTimeZone) / 86400000);
         var today = Math.floor((Date.now() - ourTimeZone) / 86400000);
         var daysFromNow = eventDay - today;
+        if (daysFromNow == 0) {
+          daysFromNow = ' (today)';
+        } else if (daysFromNow == 1) {
+          daysFromNow = ' (tomorrow)';
+        } else {
+          daysFromNow = ' (' + daysFromNow + ' days from now)';
+        }
 
         loadedEvents.push({
           name: r.name.text,
           category: r.category,
           subcategory: r.subcategory,
           organizer: r.organizer,
-          time: r.start.local.substring(0,10) + ' (' + daysFromNow + ' days from now)',
+          time: r.start.local.substring(0,10) + daysFromNow,
           description: r.description,
           url: r.url,
           venue: r.venue
