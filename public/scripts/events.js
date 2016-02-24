@@ -40,7 +40,7 @@ parameters:
           category_id: r.category_id,
           subcategory_id: r.subcategory_id,
           organizer_id: r.organizer_id,
-          time: new Date(r.start.local),
+          time: (new Date(r.start.local)).toLocaleDateString(),
           description: r.description,
           url: r.url,
           venue_id: r.venue_id
