@@ -71,7 +71,7 @@ Parameters:
         dupefilter - false for us
         location - location we passed
         query - query we passed
-        pageNumber - page number
+        pageNumber - page number (zero based ¯\_(ツ)_/¯ )
         highlight - probably false for us
 
       Fields we get back per object in data.results:
@@ -84,6 +84,8 @@ Parameters:
         sponsored - true if the entry is sponsored
         url
       */
+      // repeatedly push foreach into array so we can add more
+      // api endpoints later
       loadedJobs = [];
       data.results.forEach(function(r) {
         loadedJobs.push({
@@ -96,7 +98,7 @@ Parameters:
         });
       });
 
-      callback(loadedJobs, data.pageNumber, data.totalResults);
+      callback(loadedJobs, data.pageNumber + 1, data.totalResults);
     })
   };
 

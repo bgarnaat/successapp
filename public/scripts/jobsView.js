@@ -3,20 +3,20 @@
 
   var jobTemplate = Handlebars.compile($('#job-template').text());
 
-  jobsView.drawJobs = function(jobs, pageNumber, totalResults) {
-    lastPageNumber = Math.ceil(totalResults / jobs.PAGE_SIZE);
+  jobsView.drawJobs = function(jobsData, currentPage, totalResults) {
+    var lastPageNumber = Math.ceil(totalResults / jobs.PAGE_SIZE);
 
-    $jobSection = $('#job-section');
-    $jobPages = $('#job-pages');
+    var $jobSection = $('#jobsection');
+    var $jobPages = $('#job-pages');
     // empty out pages and job listings
     $jobPages.empty().siblings().remove();
 
     // add job listings
-    jobs.forEach(function(job) {
+    jobsData.forEach(function(job) {
       $jobSection.append(jobTemplate(job));
     });
 
-    // creates page link handlers
+    // utility function, creates page link handlers
     jumpToPage = function(page) {
       return function() {
         jobs.loadJobs(null, page, jobsView.drawJobs);
@@ -30,16 +30,16 @@
       another page.
     */
     for (
-      var i = Math.max(1, pageNumber - 3);
-      i <= Math.min(lastPageNumber, pageNumber + 3);
+      var i = Math.max(1, currentPage - 3);
+      i <= Math.min(lastPageNumber, currentPage + 3);
       i++
     ) {
-      pageNumber = $('<span class="page-number">' + i + '</span>');
-      if (i != pageNumber) {
-        pageNumber.addClass('other-page-link');
-        pageNumber.click(jumpToPage(i));
+      var $pageNumberElement = $('<span class="page-number">' + i + '</span>');
+      if (i != currentPage) {
+        $pageNumberElement.addClass('other-page-link');
+        $pageNumberElement.click(jumpToPage(i));
       }
-      $jobPages.append(pageNumber);
+      $jobPages.append($pageNumberElement);
     }
   };
 
