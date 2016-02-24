@@ -258,3 +258,7 @@
   font-family: "Lato";
   margin-bottom: -15px;
 }
+
+.event-expand {
+  display: none;
+}
