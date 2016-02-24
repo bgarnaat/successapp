@@ -17,7 +17,9 @@
         dataType: 'text',
       }).done(function(data, message, xhr) {
         // save the etag and send the data along
-        localStorage.eTag = xhr.getResponseHeader('eTag:' + key);
+        console.log(xhr.getAllResponseHeaders());
+        localStorage.setItem('etag:' + key, xhr.getResponseHeader('ETag:' + key));
+        localStorage.setItem(key, data);
         next(data);
       });
     };
@@ -35,7 +37,7 @@
         type: 'HEAD',
         url: url,
       }).done(function(data, message, xhr) {
-        var serverETag = xhr.getResponseHeader('eTag');
+        var serverETag = xhr.getResponseHeader('ETag');
         if (eTag !== serverETag) {
           // eTag doesn't match, fetch all over again
           fetchData(key, url, processData);
