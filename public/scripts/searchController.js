@@ -19,6 +19,15 @@
     }
   });
 
+  // pressing enter anywhere in our input area should perform the search
+  $('.input-section').on('keypress', function(event) {
+    if (event.keyCode == 13) {
+      // don't press the button twice
+      event.preventDefault();
+      $('#button').click();
+    }
+  });
+
   // SEARCH INDEX CONTROLLER
   searchController.index = function(ctx, next) {
     // load search parameters from regex capturing groups
