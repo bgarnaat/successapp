@@ -1,23 +1,250 @@
+/*@media only screen and (min-width: 300px) {*/
+body {
+  margin: 0;
+  width: 100%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  /*justify-content: center;*/
+}
+
+
+/*NAV BAR*/
+
+.top-section {
+  display: flex;
+  /*position: fixed;*/
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  top: 0;
+}
+
+.logo-div {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.logo {
+  max-height: 48px;
+  padding-top: 2%;
+}
+
+.hamburger-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.hamburger {
+  max-height: 24px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  padding-right: 0%;
+}
+
+.nav-ul {
+  display: none;
+  list-style: none;
+}
+
+.nav-target {
+  margin-left: -35px;
+  padding-bottom: 10px;
+}
+
+
+.main-nav:hover .nav-ul {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+/*LANDING PAGE*/
+
+.landing-page {
+  height: 100%;
+  justify-content: center;
+}
+
+.slogan {
+  padding-top: 20%;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-bottom: -5%;
+}
+
+.homepage-image {
+  justify-content: center;
+  text-align: center;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: -5%;
+}
+
+/*SEARCH BOXES*/
+
+.input-section {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.search-box-1 {
+  padding-bottom: 5%;
+}
+
+.search-box {
+  width: 300px;
+  height: 40px;
+  text-align: center;
+}
+
+/*SUBMIT SECTION*/
+
+.submit-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 25px;
+}
+
+.submit-button {
+  width: 300px;
+  height: 40px;
+}
+
+/*LISTS SECTION*/
+
 .lists-section {
   display: flex;
   align-self: center;
+  flex-direction: column;
   width: 90%;
-  height: 750px;
+  height: 1500px;
   margin: 2px;
-  background-color: none;
 }
+
+/*JOBS SECTION*/
 
 .jobs-container {
-  width: 80%;
+  width: 100%;
+  justify-content: center;
   flex-direction: column;
-  background-color: none;
 }
 
-.event-container {
-  width: 80%;
-  flex-direction: column;
-  background-color: none;
+.jobs {
+  padding-left: 3%;
+  padding-top: 1%;
 }
+
+#job-section {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0%;
+  margin-left: 3%;
+  margin-bottom: 50px;
+  margin-right: 3%;
+  padding-top: 0%;
+  padding-left: 2%;
+  padding-bottom: 2%;
+  padding-right: 2%;
+  max-width: 95%;
+  height: 570px;
+  overflow: auto;
+}
+
+.job-listing {
+  width: 90%;
+  max-width: 100%;
+  padding-top: 0px;
+  padding-left: 5%;
+  padding-bottom: 10px;
+  padding-right: 5%;
+}
+
+.job-title {
+  margin-bottom: -15px;
+}
+
+#job-pages {
+  padding-top: 3%;
+  padding-left: 1%;
+  align-items: baseline;
+}
+
+.page-number {
+  padding-right: 5px;
+}
+
+/*EVENT SECTION*/
+
+.event-container {
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.events {
+  padding-left: 3%;
+  padding-top: 1%;
+}
+#event-section {
+  margin-top: 0%;
+  margin-right: 3%;
+  margin-bottom: 50px;
+  margin-left: 3%;
+  padding-top: 0%;
+  padding-right: 2%;
+  padding-bottom: 2%;
+  padding-left: 2%;
+  max-width: 95%;
+  height: 570px;
+  overflow: auto;
+}
+.event-listing {
+  width: 90%;
+  max-width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 1%;
+}
+.event-name {
+  margin-bottom: -15px;
+}
+.event-company {
+  margin-bottom: -15px;
+}
+.event-date {
+  margin-bottom: -15px;
+}
+.event-location {
+  padding-bottom: 10px;
+}
+.event-expand {
+  display: none;
+}
+
 
 /*ABOUT SECTION*/
 
@@ -28,34 +255,29 @@
 }
 
 .about-container {
-  background-color: white;
-  height: 730px;
+  height: 800px;
 }
 
 .about-header {
   padding-left: 5%;
-  font-family: "Lato";
-  font-weight: 800;
-  font-size: 40px;
 }
 
 .about-info {
-  background-color: #99CC00;
   align-items: flex-start;
   width: 80%;
-  font-family: "Lato";
-  font-size: 30px;
-  color: white;
-  letter-spacing: 2px;
-  /*text-shadow: 1px 1px 1px #000;*/
-  font-weight: 100;
-  padding-left: 7%;
-  padding-right: 7%;
   padding-top: 10%;
+  padding-left: 7%;
   padding-bottom: 10%;
+  padding-right: 7%;
 }
 
-.about-us {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 100;
+/*FOOTER*/
+
+footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0;
+  text-align: center;
 }
