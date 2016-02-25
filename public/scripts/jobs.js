@@ -44,7 +44,7 @@ Parameters:
       currentQuery = query; // update our query info
     }
 
-    indeedQuery = $.ajax({
+    var indeedQuery = $.ajax({
       type: 'GET',
       url: '/indeed/',
       dataType: 'json',
@@ -87,7 +87,7 @@ Parameters:
       */
       // repeatedly push foreach into array so we can add more
       // api endpoints later
-      loadedJobs = [];
+      var loadedJobs = [];
       data.results.forEach(function(r) {
         loadedJobs.push({
           title: r.jobtitle,

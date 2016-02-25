@@ -77,6 +77,7 @@
     // fetch and display data from APIs
     jobs.loadJobs(query, 1, jobsView.drawJobs);
     events.loadEvents(query, eventsView.drawEvents);
+    meetup.loadMeetup(query, 1);
   };
 
   // exports
