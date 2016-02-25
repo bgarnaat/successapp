@@ -6,7 +6,7 @@
 
   aboutController.index = function() {
     console.log('hey');
-    $('#about').fadeIn('slow');
+    $('.about').show();
   };
 
   module.aboutController = aboutController;
