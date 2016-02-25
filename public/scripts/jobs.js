@@ -1,3 +1,4 @@
+'use strict';
 // JOB LISTINGS
 /* Indeed API: proxied through /indeed/* on our server
 Parameters:
@@ -99,7 +100,7 @@ Parameters:
       });
 
       callback(loadedJobs, data.pageNumber + 1, data.totalResults);
-    })
+    });
   };
 
   // exports

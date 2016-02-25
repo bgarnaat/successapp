@@ -1,3 +1,4 @@
+'use strict';
 (function(module) {
   var searchController = {};
 
@@ -35,7 +36,7 @@
 
     ctx.handled = true;
     next();
-  }
+  };
 
   // Shows the search origin
   searchController.searchHome = function() {
