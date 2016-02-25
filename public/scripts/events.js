@@ -1,3 +1,4 @@
+'use strict';
 // EVENTS
 /*
 Eventbrite API: proxied through /eventbrite/* on server
@@ -72,7 +73,7 @@ parameters:
 
       next(loadedEvents);
     });
-  }
+  };
 
   module.events = events;
 })(window);
