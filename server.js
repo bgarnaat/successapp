@@ -35,6 +35,20 @@ var proxyEvent = function(request, response) {
 
 app.get('/eventbrite/*', proxyEvent);
 
+// eventbrite API proxying
+var proxyMeetup = function(request, response) {
+  console.log('Routing Eventbrite request for', request.originalUrl);
+  (requestProxy({
+    url: 'https://api.meetup.com/2/open_events',
+    headers: {'Authorization': 'Bearer ' + process.env.KEY_MEETUP}
+  }))(request, response, function(err) {
+    console.log('err proxying meetup:', err);
+  });
+};
+
+app.get('/meetup/*', proxyEvent);
+
+
 // static files
 app.use(express.static('./public/'));
 
