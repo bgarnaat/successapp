@@ -153,6 +153,11 @@
     flex-direction: column;
   }
 
+  .job-loader {
+    margin-left: 40%;
+    margin-top: 50%;
+  }
+
   .jobs {
     padding-left: 3%;
     padding-top: 1%;
@@ -205,10 +210,16 @@
     flex-direction: column;
   }
 
+  .event-loader {
+    margin-left: 40%;
+    margin-top: 50%;
+  }
+
   .events {
     padding-left: 3%;
     padding-top: 1%;
   }
+
   #event-section {
     margin-top: 0%;
     margin-right: 3%;
@@ -223,6 +234,7 @@
     height: 570px;
     overflow: auto;
   }
+
   .event-listing {
     width: 90%;
     max-width: 100%;
@@ -230,22 +242,26 @@
     padding-right: 5%;
     padding-bottom: 1%;
   }
+
   .event-name {
     margin-bottom: -15px;
   }
+
   .event-company {
     margin-bottom: -15px;
   }
+
   .event-date {
     margin-bottom: -15px;
   }
+
   .event-location {
     padding-bottom: 10px;
   }
+
   .event-expand {
     display: none;
   }
-
 
   /*ABOUT SECTION*/
 
