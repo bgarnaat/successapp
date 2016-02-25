@@ -12,9 +12,7 @@
     <link rel="stylesheet" href="/vendors/styles/slider.css">
     <!-- FONTS -->
     <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic,900italic,900,300italic,300' rel='stylesheet' type='text/css'>
-
-    <!-- HANDLEBAR TEMPLATES -->
-
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,800,900' rel='stylesheet' type='text/css'>
     <!-- JOB TEMPLATE -->
     <script id="job-template" type="text/x-handlebars-template">
       <article class="job-listing">
@@ -49,10 +47,10 @@
 
     <!-- ABOUT TEMPLATE -->
     <script id="about-template" type="text/x-handlebars-template">
-      <section>
-        <div class="about-container">
-          <h1><strong>{{aboutHeader}}</strong></h1>
-          <h3>{{{aboutUs}}}</h3>
+      <section class="about-container">
+        <h1 class="about-header"><strong>{{aboutHeader}}</strong></h1>
+        <div class="about-info">
+          <h3 class="about-us">{{aboutUs}}</h3>
         </div>
       </section>
     </script>
@@ -66,7 +64,7 @@
       <nav class="main-nav">
         <ul class="nav-ul">
           <li class="nav-target"><a href="#" class="nav-link">Search</a></li>
-          <li class="nav-target" data-link="about"><a href="#" class="nav-link">About</a></li>
+          <li id="about-tab" class="nav-target" data-link="about"><a href="/about" class="nav-link">About</a></li>
           <li class="nav-target" data-link="resource"><a href="#" class="nav-link">Resources</a></li>
           <li class="nav-target"><a href="#" class="nav-link">Connect</a></li>
         </ul>
@@ -116,12 +114,8 @@
         </section>
       </section>
 
-      <!-- THIRD PAGE -->
-      <section class="about">
-        <section class="about-container">
-          <section id="about" class="tab-content"></section>
-        </section>
-      </section>
+      <!-- ABOUT SECTION -->
+      <section id="about" class="about" class="tab-content"></section>
 
     </main>
 

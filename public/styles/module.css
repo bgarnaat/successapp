@@ -259,3 +259,7 @@
 .event-expand {
   display: none;
 }
+
+.event-expand {
+  font-family: "Lato";
+}
