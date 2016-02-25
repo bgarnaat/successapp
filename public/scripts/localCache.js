@@ -1,7 +1,7 @@
 'use strict';
 // STORES AND CACHES JSON FILES FROM OUR SERVER's (/data/*) FOLDER IN LOCALSTORAGE
 (function(module) {
-  localCache = {};
+  var localCache = {};
 
   localCache.fetch = function(key, callback) {
     // THIS IS THE END GOAL

@@ -18,7 +18,7 @@ parameters:
   var PAGE_SIZE = 5;
 
   events.loadEvents = function(query, next) {
-    eventbriteQuery = $.ajax({
+    var eventbriteQuery = $.ajax({
       type: 'GET',
       url: '/eventbrite/',
       dataType: 'json',
@@ -32,7 +32,7 @@ parameters:
     });
 
     $.when(eventbriteQuery).done(function(data) {
-      loadedEvents = [];
+      var loadedEvents = [];
       data.events.forEach(function(r) {
         // TODO:  use cat_id, subcat_id, venue_id to load associated data
         var ourTimeZone = new Date().getTimezoneOffset() * 60000;

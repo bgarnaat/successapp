@@ -76,6 +76,7 @@
 
     // fetch and display data from APIs
     jobs.loadJobs(query, 1, jobsView.drawJobs);
+    $('#gif').show();
     events.loadEvents(query, eventsView.drawEvents);
   };
 
