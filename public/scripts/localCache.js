@@ -1,23 +1,22 @@
-// stores and caches json files from our server's /data/* folder in localStorage
-
+'use strict';
+// STORES AND CACHES JSON FILES FROM OUR SERVER's (/data/*) FOLDER IN LOCALSTORAGE
 (function(module) {
   localCache = {};
 
   localCache.fetch = function(key, callback) {
-    // this is the end goal
+    // THIS IS THE END GOAL
     var processData = function(data, message, xhr) {
       callback(JSON.parse(data));
     };
 
-    // fetches data from the url
+    // FETCHES DATA FROM THE URL
     var fetchData = function(key, url, next) {
       $.ajax({
         type: 'GET',
         url: url,
         dataType: 'text',
       }).done(function(data, message, xhr) {
-        // save the etag and send the data along
-        console.log(xhr.getAllResponseHeaders());
+        // SAVE THE ETAG AND SEND THE DATA ALONG
         localStorage.setItem('etag:' + key, xhr.getResponseHeader('ETag'));
         localStorage.setItem(key, data);
         next(data);
@@ -29,26 +28,25 @@
     var url = '/data/' + key + '.json';
 
     if (!cached || !eTag) {
-      // we are missing either our data or our etag, fetch again
+      // WE ARE MISSING EITHER OUR DATA || ETAG, FETCH AGAIN
       fetchData(key, url, processData);
     } else {
-      // we have data and an etag, and need to check it
+      // WE HAVE DATA AND AN ETAG, AND NEED TO CHECK IT
       $.ajax({
         type: 'HEAD',
         url: url,
       }).done(function(data, message, xhr) {
         var serverETag = xhr.getResponseHeader('ETag');
         if (eTag !== serverETag) {
-          // eTag doesn't match, fetch all over again
+          // ETAG DOESN'T MATCH, FETCH ALL OVER AGAIN
           fetchData(key, url, processData);
         } else {
-          // we already have the correct data
+          // WE ALREADY HAVE THE CORRECT DATA
           processData(cached);
         }
       });
     }
   };
 
-  // exports
   module.localCache = localCache;
 })(window);
