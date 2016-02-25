@@ -1,4 +1,4 @@
-
+'use strict';
 /* main page index:
 /location/:location/search/:query/page/:page#/, all three are optional
 */

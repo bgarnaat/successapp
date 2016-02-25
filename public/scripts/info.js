@@ -1,3 +1,4 @@
+'use strict';
 (function(module) {
 
   function Info(opts) {
@@ -9,7 +10,7 @@
   Info.prototype.toHtml = function(temp) {
     var template = Handlebars.compile($(temp).text());
     return template(this);
-  }
+  };
 
   Info.all = [];
   Info.loadAll = function(rawInfo) {
