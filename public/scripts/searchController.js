@@ -36,7 +36,7 @@
       }
 
       $('html,body').animate(
-        { scrollTop: $('.lists-section').offset().top},
+        { scrollTop: $('.lists-section').offset().top - $('.top-section').height()},
         'slow'
       );
 

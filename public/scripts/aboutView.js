@@ -1,18 +1,16 @@
 (function(module) {
   var aboutView = {};
 
-  // APPENDS THE SECTION THAT IS RAN IN THE CONTROLLER
-  aboutView.initIndexPage = function(section) {
-    if (section == '#about') {
+  // Updates and displays the about section
+  aboutView.initIndexPage = function() {
+    localCache.fetch('about', function(data) {
+      About.loadAll(data);
+      var $aboutSection = $('#about').empty();
       About.all.forEach(function(a) {
-        $(section).append(a.toHtml('#about-template'));
+        $aboutSection.append(a.toHtml('#about-template'));
       });
-    } else {
-      About.all.forEach(function(a) {
-        $(section).append(a.toHtml('#resource-template'));
-      });
-    }
+    });
   };
-  
+
   module.aboutView = aboutView;
 })(window);
