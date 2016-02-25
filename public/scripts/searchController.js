@@ -3,7 +3,7 @@
 
   // click handler for our search button
   $('#button').click(function() {
-    var destination = '/';
+    var destination = '/search/';
     var location = $('#search-location').val();
     var keywords = $('#search-keywords').val();
     if (location || keywords) { // don't do anything if the boxes are empty
@@ -11,7 +11,7 @@
         destination += 'location/' + encodeURIComponent(location) + '/';
       }
       if (keywords) {
-        destination += 'search/' + encodeURIComponent(keywords) + '/';
+        destination += 'keyword/' + encodeURIComponent(keywords) + '/';
       }
       console.log('button navigating to', destination);
       page(destination);
@@ -20,19 +20,21 @@
 
   // search result controller
   searchController.index = function(ctx, next) {
+    console.log('ctx: ', ctx);
+    console.log('ctx.params: ', ctx.params);
     // load from context
-    var location = ctx.params[1];
-    var search = ctx.params[3];
+    var location = ctx.params[2];
+    var keyword = ctx.params[3];
 
     // IF WE DO A SEARCH
-    if (location || search) {
+    if (location || keyword) {
       if (location) {
         location = decodeURIComponent(location);
         $('#search-location').val(location);
       }
-      if (search) {
-        search = decodeURIComponent(search);
-        $('#search-keywords').val(search);
+      if (keyword) {
+        keyword = decodeURIComponent(keyword);
+        $('#search-keywords').val(keyword);
       }
 
       $('html,body').animate(
@@ -45,7 +47,7 @@
 
       // build model query
       var query = {
-        query: search,
+        query: keyword,
         location: location,
       };
 
