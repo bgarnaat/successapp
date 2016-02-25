@@ -1,22 +1,169 @@
 body {
-  margin: 0;
   background-color: #99CC00;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+/*NAV BAR*/
+
+.top-section {
+  background-color: #333333;
+  border-bottom: solid 6px #33CC33;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-family: "Lato";
+  color: white;
+  font-size: 20px;
+}
+
+/*LANDING PAGE*/
+
+.slogan {
+  font-family: "Lato";
+  font-size: 25px;
+  color: white;
+}
+
+/*SEARCH BOXES*/
+
+.search-box {
+  font-family: "Lato";
+  font-size: 15px;
+  color: grey;
+  border-top: none;
+  border-left: none;
+  border-bottom: solid 4px #009933;
+  border-right: solid 4px #009933;
+}
+
+.submit-button {
+  background-color: #33CC33;
+  border-bottom: solid 4px #009933;
+  border-right: solid 4px #009933;
+  border-top: none;
+  border-left: none;
+  font-family: "Lato";
+  font-weight: bolder;
+  color: white;
+  font-size: 15px;
+}
+
+/*JOBS SECTION*/
+
+.jobs {
+  font-family: "Lato";
+  font-weight: 800;
+  font-size: 25px;
+  color: #333333;
+}
+
+#job-section {
+  overflow: scroll;
+  border-bottom: solid 4px #009933;
+  border-right: solid 4px #009933;
+  background-color: white;
+}
+
+.job-listing {
+  border-bottom: dashed 1px black;
+}
+
+.job-title {
+  font-family: "Lato";
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.job-company-name {
+  font-family: "Lato";
+}
+
+#job-pages {
+  cursor: default;
+}
+
+.page-number {
+  font-family: "Lato";
+  font-size: 12px;
+  color: #33CC33;
+}
+
+.page-number.other-page-link {
+  font-family: "Lato";
+  font-size: 12px;
+  color: #333333;
+  cursor: pointer;
+}
+
+/*EVENTS SECTION*/
+
+.events {
+  font-family: "Lato";
+  font-weight: 800;
+  font-size: 25px;
+  color: #333333;
+}
+
+#event-section {
+  border-bottom: solid 4px #009933;
+  border-right: solid 4px #009933;
+  background-color: white;
+}
+
+.event-listing {
+  border-bottom: dashed 1px black;
+}
+
+.event-name {
+  font-family: "Lato";
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.event-company {
+  font-family: "Lato";
+}
+
+.event-date {
+  font-family: "Lato";
+}
+
+.event-location {
+  font-family: "Lato";
+}
+
+.event-expand {
+  font-family: "Lato";
+}
+
+
+/*ABOUT US SECTION*/
+
+.about-container {
+  background-color: white;
+}
+
+.about-header {
+  font-family: "Lato";
+  font-weight: 800;
+  font-size: 30px;
+}
+
+.about-us {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 100;
+}
+.about-info {
+  font-family: "Lato";
+  font-size: 20px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  color: white;
+  background-color: #99CC00;
 }
 
 /*FOOTER*/
 
 footer {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 0;
-  text-align: center;
   background-color: #F0F0F0;
 }

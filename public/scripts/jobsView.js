@@ -18,7 +18,7 @@
     });
 
     // utility function, creates page link handlers
-    jumpToPage = function(page) {
+    var jumpToPage = function(page) {
       return function() {
         jobs.loadJobs(null, page, jobsView.drawJobs);
       };
