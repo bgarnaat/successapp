@@ -75,8 +75,8 @@
     };
 
     // fetch and display data from APIs
-    jobs.loadJobs(query, 1, jobsView.drawJobs);
     $('#gif').show();
+    jobs.loadJobs(query, 1, jobsView.drawJobs);
     events.loadEvents(query, eventsView.drawEvents);
   };
 

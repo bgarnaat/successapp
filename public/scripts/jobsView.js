@@ -5,6 +5,7 @@
   var jobTemplate = Handlebars.compile($('#job-template').text());
 
   jobsView.drawJobs = function(jobsData, currentPage, totalResults) {
+    $('#gif').hide();
     var lastPageNumber = Math.ceil(totalResults / jobs.PAGE_SIZE);
 
     var $jobSection = $('#job-section');
