@@ -5,6 +5,7 @@
   var eventsTemplate = Handlebars.compile($('#events-template').text());
 
   eventsView.drawEvents = function(events) {
+    $('#gif').hide();
     var $eventSection = $('#event-section');
     $eventSection.empty();
     events.forEach(function(a) {
