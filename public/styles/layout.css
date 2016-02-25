@@ -15,7 +15,7 @@ main {
 
 .top-section {
   display: flex;
-  /*position: fixed;*/
+  position: fixed;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -106,12 +106,12 @@ main {
   display: flex;
   text-align: center;
   flex-direction: column;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .search-box-1 {
-  padding-bottom: 5%;
+  padding-bottom: 10px;
 }
 
 .search-box {
@@ -255,7 +255,7 @@ main {
 }
 
 .about-container {
-  height: 800px;
+  height: 700px;
 }
 
 .about-header {
