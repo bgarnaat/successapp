@@ -1,12 +1,18 @@
 (function(module) {
   var aboutController = {};
 
-  localCache.fetch('about', About.loadAll);
-  aboutView.initIndexPage('#about');
+  aboutView.initIndexPage();
 
-  aboutController.index = function() {
-    console.log('hey');
-    $('.about').show();
+  aboutController.index = function(ctx, next) {
+    $('#about').fadeIn('slow');
+
+    $('html,body').animate(
+      { scrollTop: $('.about').offset().top},
+      'slow'
+    );
+
+    ctx.handled = true;
+    next();
   };
 
   module.aboutController = aboutController;

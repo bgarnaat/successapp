@@ -2,6 +2,7 @@
   display: flex;
   align-self: center;
   width: 90%;
+  height: 750px;
   margin: 2px;
   background-color: none;
 }
@@ -16,4 +17,45 @@
   width: 80%;
   flex-direction: column;
   background-color: none;
+}
+
+/*ABOUT SECTION*/
+
+#about {
+  display: flex;
+  width: 100%;
+  padding-top: 10%;
+}
+
+.about-container {
+  background-color: white;
+  height: 730px;
+}
+
+.about-header {
+  padding-left: 5%;
+  font-family: "Lato";
+  font-weight: 800;
+  font-size: 40px;
+}
+
+.about-info {
+  background-color: #99CC00;
+  align-items: flex-start;
+  width: 80%;
+  font-family: "Lato";
+  font-size: 30px;
+  color: white;
+  letter-spacing: 2px;
+  /*text-shadow: 1px 1px 1px #000;*/
+  font-weight: 100;
+  padding-left: 7%;
+  padding-right: 7%;
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+
+.about-us {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 100;
 }
