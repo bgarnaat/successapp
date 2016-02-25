@@ -2,10 +2,10 @@
 /location/:location/search/:query/page/:page#/, all three are optional
 */
 page(
-  /^\/(location\/(.+?)\/)?(search\/(.+?)\/)?$/,
-  searchController.index
+  /^\/(search\/)?(location\/(.+?)\/)?(keywords\/(.+?)\/)?$/,
+  searchController.results
 );
-
+page('/search', searchController.index);
 page('/about', aboutController.index);
 
 // fallback
@@ -17,5 +17,7 @@ page('*', function(ctx, next) {
   }
   next();
 });
+
+page('/', searchController.index);
 
 page();
