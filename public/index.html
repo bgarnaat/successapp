@@ -12,9 +12,7 @@
     <link rel="stylesheet" href="/vendors/styles/slider.css">
     <!-- FONTS -->
     <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic,900italic,900,300italic,300' rel='stylesheet' type='text/css'>
-
-    <!-- HANDLEBAR TEMPLATES -->
-
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,800,900' rel='stylesheet' type='text/css'>
     <!-- JOB TEMPLATE -->
     <script id="job-template" type="text/x-handlebars-template">
       <article class="job-listing">
@@ -35,8 +33,8 @@
           {{#if subcategory.name}}
           <p class="event-subcategory"><b>Subcategory:</b> {{subcategory.name}}</p>
           {{/if}}
-          <p class="event-start"><b>Start:</b> {{start.local}}</p>
-          <p class="event-end"><b>End:</b> {{end.local}}</p>
+          <p class="event-start"><b>Start:</b> {{start}}</p>
+          <p class="event-end"><b>End:</b> {{end}}</p>
           <p class="event-duration"><b>Duration:</b> {{duration}}</p>
           <p class="event-organizer"><b>Organizer:</b> {{organizer}}</p>
           <p class="event-venue-name"><b>Venue:</b> {{venue.name}}</p>
@@ -49,10 +47,10 @@
 
     <!-- ABOUT TEMPLATE -->
     <script id="about-template" type="text/x-handlebars-template">
-      <section>
-        <div class="about-container">
-          <h1><strong>{{aboutHeader}}</strong></h1>
-          <h3>{{{aboutUs}}}</h3>
+      <section class="about-container">
+        <h1 class="about-header"><strong>{{aboutHeader}}</strong></h1>
+        <div class="about-info">
+          <h3 class="about-us">{{aboutUs}}</h3>
         </div>
       </section>
     </script>
@@ -65,10 +63,10 @@
       <a href="/"><img src="/img/successapplogo.png" class="logo"></a>
       <nav class="main-nav">
         <ul class="nav-ul">
-          <li class="nav-target"><a href="#" class="nav-link">Search</a></li>
-          <li class="nav-target" data-link="about"><a href="#" class="nav-link">About</a></li>
-          <li class="nav-target" data-link="resource"><a href="#" class="nav-link">Resources</a></li>
-          <li class="nav-target"><a href="#" class="nav-link">Connect</a></li>
+          <li class="nav-target"><a href="/search" class="nav-link">Search</a></li>
+          <li id="about-tab" class="nav-target" data-link="about"><a href="/about" class="nav-link">About</a></li>
+          <!-- <li class="nav-target" data-link="resource"><a href="#" class="nav-link">Resources</a></li> -->
+          <!-- <li class="nav-target"><a href="#" class="nav-link">Connect</a></li> -->
         </ul>
       </nav>
     </header>
@@ -100,7 +98,7 @@
       </section>
 
       <!-- SECOND PAGE -->
-      <section class="lists-section">
+      <section class="lists-section" style="display:none">
         <!-- JOB SECTION -->
         <section class="jobs-container">
           <h1 class="jobs">JOBS</h1>
@@ -116,12 +114,8 @@
         </section>
       </section>
 
-      <!-- THIRD PAGE -->
-      <section class="about">
-        <section class="about-container">
-          <section id="about" class="tab-content"></section>
-        </section>
-      </section>
+      <!-- ABOUT SECTION -->
+      <section id="about" class="about" class="tab-content"></section>
 
     </main>
 
@@ -139,10 +133,10 @@
     <script type="text/javascript" src="/scripts/localCache.js"></script>
     <script type="text/javascript" src="/scripts/jobs.js"></script>
     <script type="text/javascript" src="/scripts/events.js"></script>
-    <script type="text/javascript" src="/scripts/about.js"></script>
+    <script type="text/javascript" src="/scripts/info.js"></script>
     <script type="text/javascript" src="/scripts/jobsView.js"></script>
     <script type="text/javascript" src="/scripts/eventsView.js"></script>
-    <script type="text/javascript" src="/scripts/aboutView.js"></script>
+    <script type="text/javascript" src="/scripts/infoView.js"></script>
     <script type="text/javascript" src="/scripts/searchController.js"></script>
     <script type="text/javascript" src="/scripts/aboutController.js"></script>
     <script type="text/javascript" src="/scripts/routes.js"></script>

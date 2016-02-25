@@ -1,12 +1,12 @@
 (function(module) {
   var searchController = {};
 
-  // click handler for our search button
+  // CLICK HANDLER FOR SEARCH BUTTON
   $('#button').click(function() {
     var destination = '/';
     var location = $('#search-location').val();
     var keywords = $('#search-keywords').val();
-    if (location || keywords) { // don't do anything if the boxes are empty
+    if (location || keywords) { // don't do anything if the boxes are both empty
       if (location) {
         destination += 'location/' + encodeURIComponent(location) + '/';
       }
@@ -18,43 +18,64 @@
     }
   });
 
-  // search result controller
+  // SEARCH INDEX CONTROLLER
   searchController.index = function(ctx, next) {
-    // load from context
+    // load search parameters from regex capturing groups
+    // sadly javascript's regex does not support named capturing groups
     var location = ctx.params[1];
-    var search = ctx.params[3];
+    var keywords = ctx.params[3];
 
-    // IF WE DO A SEARCH
-    if (location || search) {
-      if (location) {
-        location = decodeURIComponent(location);
-        $('#search-location').val(location);
-      }
-      if (search) {
-        search = decodeURIComponent(search);
-        $('#search-keywords').val(search);
-      }
-
-      $('html,body').animate(
-        { scrollTop: $('.lists-section').offset().top},
-        'slow'
-      );
-
-      // $('.jobs').show();
-      // $('#job-section').slideDown();
-
-      // build model query
-      var query = {
-        query: search,
-        location: location,
-      };
-
-      jobs.loadJobs(query, 1, jobsView.drawJobs);
-      events.loadEvents(query, eventsView.drawEvents);
+    if (location || keywords) {
+      // we are performing a search
+      searchController.performSearch(location, keywords);
+    } else {
+      // we are just on /, show the search boxes
+      searchController.searchHome();
     }
 
     ctx.handled = true;
     next();
+  }
+
+  // Shows the search origin
+  searchController.searchHome = function() {
+    // scroll to the top of the page
+    $('html,body').animate(
+      { scrollTop: $('.landing-page').offset().top },
+      'slow'
+    );
+  };
+
+  // Executes a search on the page
+  searchController.performSearch = function(location, keywords) {
+    // decode parameters of our search
+    if (location) {
+      location = decodeURIComponent(location);
+      $('#search-location').val(location);
+    }
+    if (keywords) {
+      keywords = decodeURIComponent(keywords);
+      $('#search-keywords').val(keywords);
+    }
+
+    // show the result boxes
+    $('.lists-section').show();
+
+    // SCROLL DOWN ANIMATION
+    $('html,body').animate(
+      { scrollTop: $('.lists-section').offset().top - $('.top-section').height()},
+      'slow'
+    );
+
+    // BUILD MODEL QUERY
+    var query = {
+      query: keywords,
+      location: location,
+    };
+
+    // fetch and display data from APIs
+    jobs.loadJobs(query, 1, jobsView.drawJobs);
+    events.loadEvents(query, eventsView.drawEvents);
   };
 
   // exports
