@@ -110,6 +110,11 @@ body {
   background-color: white;
 }
 
+.no-events {
+  font-family: "Lato";
+  padding-left: 2%;
+}
+
 .event-listing {
   border-bottom: dashed 1px black;
 }
