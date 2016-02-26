@@ -6,5 +6,6 @@
     autoControls: false,
     controls: false,
     pager: false,
+    useCSS: false,
   });
 })(window);
