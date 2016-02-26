@@ -7,7 +7,10 @@
   eventsView.drawEvents = function(events) {
     $('.event-loader').hide();
     var $eventSection = $('#event-section');
-    $eventSection.empty();
+    
+    // empty out event listings
+    $eventSection.find('.event-listing').remove();
+
     if (events === {}) {
       events.forEach(function(a) {
         var $eventElement = $(eventsTemplate(a));

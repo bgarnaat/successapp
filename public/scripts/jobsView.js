@@ -10,8 +10,9 @@
 
     var $jobSection = $('#job-section');
     var $jobPages = $('#job-pages');
-    // empty out pages and job listings
-    $jobPages.empty().siblings().remove();
+
+    // empty out page numbers and job listings
+    $jobPages.empty().siblings('.job-listing').remove();
 
     // add job listings
     jobsData.forEach(function(job) {
