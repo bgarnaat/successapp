@@ -10,6 +10,8 @@ page(
 // ROUTE TO ABOUT PAGE
 page('/about', aboutController.index);
 
+page('/resource', resourceController.index);
+
 // FALLBACK IF ANY ROUTE FAILS
 page('*', function(ctx, next) {
   if (!ctx.handled) {
