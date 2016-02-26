@@ -8,7 +8,7 @@
     $('.event-loader').hide();
     var $eventSection = $('#event-section');
     $eventSection.empty();
-    if (events === {}) {
+    if (events.length > 0) {
       events.forEach(function(a) {
         var $eventElement = $(eventsTemplate(a));
         // attach handler for expanded information
