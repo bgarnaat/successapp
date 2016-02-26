@@ -44,7 +44,7 @@ Parameters:
       currentQuery = query; // update our query info
     }
 
-    var indeedQuery = $.ajax({
+    $.ajax({
       type: 'GET',
       url: '/indeed/',
       dataType: 'json',
@@ -56,9 +56,7 @@ Parameters:
         sort: 'relevance',
         radius: currentQuery.radius || 25,
       },
-    });
-
-    $.when(indeedQuery).done(function(data) {
+    }).done(function(data, message, xhr) {
       // here we have our data
       // ╰( ͡° ͜ʖ ͡° )つ──☆・ﾟ
       /*
@@ -88,18 +86,25 @@ Parameters:
       // repeatedly push foreach into array so we can add more
       // api endpoints later
       var loadedJobs = [];
-      data.results.forEach(function(r) {
-        loadedJobs.push({
-          title: r.jobtitle,
-          company: r.company,
-          location: r.formattedLocation,
-          time: r.formattedRelativeTime,
-          description: r.snippet,
-          url: r.url,
+      if (data.results) {
+        data.results.forEach(function(r) {
+          loadedJobs.push({
+            title: r.jobtitle,
+            company: r.company,
+            location: r.formattedLocation,
+            time: r.formattedRelativeTime,
+            description: r.snippet,
+            url: r.url,
+          });
         });
-      });
+      };
 
       callback(loadedJobs, data.pageNumber + 1, data.totalResults);
+    }).fail(function (xhr, message, error) {
+      // we got an error from indeed
+      // return no jobs
+      console.log('returning no jobs');
+      callback([]);
     });
   };
 

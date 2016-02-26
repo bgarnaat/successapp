@@ -4,10 +4,17 @@
 
   var eventsTemplate = Handlebars.compile($('#events-template').text());
 
+  eventsView.clear = function() {
+    // show the spinner
+    $('#event-loader').show();
+    // empty out event listings
+    $('#event-section').find('.event-listing, .no-events').remove();
+  };
+
   eventsView.drawEvents = function(events) {
-    $('.event-loader').hide();
+    $('#event-loader').hide();
     var $eventSection = $('#event-section');
-    $eventSection.empty();
+
     if (events.length > 0) {
       events.forEach(function(a) {
         var $eventElement = $(eventsTemplate(a));
@@ -18,6 +25,7 @@
         $eventSection.append($eventElement);
       });
     } else {
+      // we've gotten no events back!
       var $noEventElement = $('<p class="no-events">No Events Found</p>');
       $eventSection.append($noEventElement);
     }

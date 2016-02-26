@@ -78,7 +78,7 @@ body {
   font-family: "Lato";
 }
 
-#job-pages {
+#job-pages, #event-pages {
   cursor: default;
 }
 
@@ -107,10 +107,11 @@ body {
 #event-section {
   border-bottom: solid 4px #009933;
   border-right: solid 4px #009933;
+  padding-top: 3%;
   background-color: white;
 }
 
-.no-events {
+.no-jobs, .no-events {
   font-family: "Lato";
   padding-left: 2%;
 }

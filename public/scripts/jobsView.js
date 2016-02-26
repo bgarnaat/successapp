@@ -4,19 +4,31 @@
 
   var jobTemplate = Handlebars.compile($('#job-template').text());
 
+  jobsView.clear = function() {
+    // show the spinner
+    $('#job-loader').show();
+    // empty out page numbers and job listings
+    $('#job-pages').empty().siblings('.job-listing, .no-jobs').remove();
+  };
+
   jobsView.drawJobs = function(jobsData, currentPage, totalResults) {
-    $('.job-loader').hide();
+    $('#job-loader').hide();
     var lastPageNumber = Math.ceil(totalResults / jobs.PAGE_SIZE);
 
     var $jobSection = $('#job-section');
     var $jobPages = $('#job-pages');
-    // empty out pages and job listings
-    $jobPages.empty().siblings().remove();
 
-    // add job listings
-    jobsData.forEach(function(job) {
-      $jobSection.append(jobTemplate(job));
-    });
+    // empty out page numbers and job listings
+    $jobPages.empty().siblings('.job-listing, .no-jobs').remove();
+
+    if (jobsData.length > 0) {  // add job listings
+      jobsData.forEach(function(job) {
+        $jobSection.append(jobTemplate(job));
+      });
+    } else {
+      // received no nobs!
+      $jobSection.append($('<p class="no-jobs">No Jobs Found</p>'));
+    }
 
     // utility function, creates page link handlers
     var jumpToPage = function(page) {
