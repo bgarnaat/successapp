@@ -156,6 +156,7 @@ main {
 #job-loader {
   margin-left: 40%;
   margin-top: 50%;
+  max-width: 100px;
 }
 
 .jobs {
