@@ -3,7 +3,8 @@
 (function(module) {
   $('.bxslider').bxSlider({
     auto: true,
-    autoControls: true,
-    controls: false
+    autoControls: false,
+    controls: false,
+    pager: false,
   });
 })(window);
