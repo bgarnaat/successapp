@@ -1,12 +1,9 @@
 'use strict';
 (function(module) {
-  var aboutController = {};
+  var resourceController = {};
 
-  // APPEND THE ABOUT PAGE AND TAKE 'about' && 'about-template' AS PARAMETERS
-  infoView.initIndexPage('about', 'about-template');
-
-  // RUNS THE '/about' ROUTE
-  aboutController.index = function(ctx, next) {
+  // RUNS THE '/resource' ROUTE
+  resourceController.index = function(ctx, next) {
     // get height of header to offset page view by this amount.
     var headerHeight = $('.top-section').height();
 
@@ -15,12 +12,12 @@
 
     $('html,body').animate(
       // set scroll position to container position offset for header height.
-      { scrollTop: $('.about-container').offset().top - headerHeight},
+      { scrollTop: $('.resources-section').offset().top - headerHeight},
       'slow'
     );
     ctx.handled = true;
     next();
   };
 
-  module.aboutController = aboutController;
+  module.resourceController = resourceController;
 })(window);
