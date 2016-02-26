@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/styles/module.css">
     <link rel="stylesheet" href="/styles/state.css">
     <link rel="stylesheet" href="/vendors/styles/slider.css">
-
+    <link rel="stylesheet" href="/vendors/scripts/jquery.bxslider.css">
     <!-- FONTS -->
     <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic,900italic,900,300italic,300' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,800,900' rel='stylesheet' type='text/css'>
@@ -89,8 +89,26 @@
       <section class="landing-page">
         <!-- PLACEHOLDER IMAGE -->
         <section class="homepage-image">
-          <h1 class="slogan">Search for jobs. Find events. Make connections. Empower your interview.</h1>
-          <img src="/img/search.png">
+          <!-- <h1 class="slogan">Search for jobs. Find events. Make connections. Empower your interview.</h1>
+          <ul class="bxslider">
+            <li><img src="/img/search.png" /></li>
+            <li><img src="/img/mountain.png" /></li>
+            <li><img src="/img/ticket.png" /></li>
+          </ul> -->
+          <ul class="bxslider">
+            <li>
+              <h1 class="slogan">Search for jobs.</h1>
+              <img src="/img/search.png" />
+            </li>
+            <li>
+              <h1 class="slogan">Find events.  Make connections.</h1>
+              <img src="/img/ticket.png" />
+            </li>
+            <li>
+              <h1 class="slogan">Empower your interview.</h1>
+              <img src="/img/mountain.png" />
+            </li>
+          </ul>
         </section>
         <!-- SEARCH FORM -->
         <section class="input-section">
@@ -155,6 +173,7 @@
     <script type="text/javascript" src="/vendors/scripts/jquery.js"></script>
     <script type="text/javascript" src="/vendors/scripts/handlebars.js"></script>
     <script type="text/javascript" src="/vendors/scripts/page.js"></script>
+    <script type="text/javascript" src="/vendors/scripts/jquery.bxslider.min.js"></script>
 
     <!-- SCRIPTS -->
     <script type="text/javascript" src="/scripts/localCache.js"></script>
@@ -168,6 +187,7 @@
     <script type="text/javascript" src="/scripts/aboutController.js"></script>
     <script type="text/javascript" src="/scripts/resourceController.js"></script>
     <script type="text/javascript" src="/scripts/routes.js"></script>
+    <script type="text/javascript" src="/scripts/bxsliderControl.js"></script>
 
   </body>
 </html>

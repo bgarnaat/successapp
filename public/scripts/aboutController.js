@@ -15,7 +15,7 @@
 
     $('html,body').animate(
       // set scroll position to container position offset for header height.
-      { scrollTop: $('.about-container').offset().top - headerHeight},
+      { scrollTop: $('.about').offset().top - headerHeight},
       'slow'
     );
     ctx.handled = true;
