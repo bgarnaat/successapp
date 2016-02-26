@@ -18,6 +18,7 @@
       <article class="job-listing">
         <h1 class="job-title">{{title}}</h1>
         <p class="job-company-name">{{company}} - {{location}}</p>
+        <p class="job-url"><a href="{{url}}" target="_blank">Job Details</a></p>
       </article>
     </script>
 
@@ -40,7 +41,7 @@
           <p class="event-venue-name"><b>Venue:</b> {{venue.name}}</p>
           <p class="event-venue-addess-1"><b>Address:</b> {{venue.address.address_1}} {{venue.address.address_2}}</p>
           <p class="event-capacity"><b>Capacity:</b> {{capacity}}</p>
-          <p class="event-url"><b>Register:</b> <a href={{url}}>{{url}}</a></p>
+          <p class="event-url"><a href={{url}} target="_blank">Register Here</a></p>
         </div>
       </article>
     </script>
@@ -69,7 +70,7 @@
         <ul class="nav-ul">
           <li class="nav-target"><a href="/search" class="nav-link">Search</a></li>
           <li class="nav-target" id="about-tab"  data-link="about"><a href="/about" class="nav-link">About</a></li>
-          <li class="nav-target" data-link="resource"><a href="#" class="nav-link">Resources</a></li>
+          <li class="nav-target" data-link="resource"><a href="/resource" class="nav-link">Resources</a></li>
           <!-- <li class="nav-target"><a href="#" class="nav-link">Connect</a></li> -->
         </ul>
       </div>
@@ -128,6 +129,20 @@
       <!-- ABOUT SECTION -->
       <section id="about" class="about" class="tab-content"></section>
 
+      <!-- RESOURCES SECTION -->
+      <section class="resources-section">
+        <div class="twitter-div">
+          <a class="twitter-timeline" href="https://twitter.com/SuccessAppSEA" data-widget-id="702983333320339458">Tweets by @SuccessAppSEA</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+        <aside class="resources-aside">
+          <p class="resources-blurb">
+            Social media can be a great tool to utilize in your job hunt. Follow people who inspire you, companies that you want to work for, and other job hunt and event sites such as Indeed and Eventbrite. Give us a follow for tips and tweets about job related events nearest you!
+          </p>
+        </aside>
+      </section>
+
+
     </main>
 
     <footer>
@@ -150,6 +165,7 @@
     <script type="text/javascript" src="/scripts/infoView.js"></script>
     <script type="text/javascript" src="/scripts/searchController.js"></script>
     <script type="text/javascript" src="/scripts/aboutController.js"></script>
+    <script type="text/javascript" src="/scripts/resourceController.js"></script>
     <script type="text/javascript" src="/scripts/routes.js"></script>
 
   </body>

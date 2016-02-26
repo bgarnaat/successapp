@@ -265,11 +265,11 @@
 
   /*ABOUT SECTION*/
 
-  #about {
+  /*#about {
     display: flex;
     width: 100%;
     padding-top: 10%;
-  }
+  }*/
 
   .about-container {
     height: 730px;
@@ -289,17 +289,43 @@
     padding-left: 7%;
     padding-bottom: 10%;
     padding-right: 7%;
-    font-family: "Lato";
     font-size: 30px;
     font-weight: 100;
     letter-spacing: 2px;
-    color: white;
-    background-color: #99CC00;
   }
 
   .about-us {
     font-family: 'Raleway', sans-serif;
     font-weight: 100;
+  }
+
+  /*RESOURCES SECTION*/
+
+  .resources-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .resources-aside {
+    display: flex;
+    background-color: white;
+    height: 600px;
+    width: 518px;
+    border-radius: 5px;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    overflow: auto;
+  }
+
+  .resources-blurb {
+    font-family: "Lato";
+    font-weight: bold;
+    font-size: 30px;
+    color: #333333;
+    padding: 5%;
   }
 
   /*FOOTER*/

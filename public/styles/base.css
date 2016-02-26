@@ -142,7 +142,6 @@ body {
   font-family: "Lato";
 }
 
-
 /*ABOUT US SECTION*/
 
 .about-container {
@@ -159,13 +158,14 @@ body {
   font-family: 'Raleway', sans-serif;
   font-weight: 100;
 }
+
 .about-info {
   font-family: "Lato";
   font-size: 20px;
   font-weight: 100;
   letter-spacing: 2px;
   color: white;
-  background-color: #99CC00;
+  background-color: #333333;
 }
 
 /*FOOTER*/

@@ -153,6 +153,11 @@ main {
   flex-direction: column;
 }
 
+#job-loader {
+  margin-left: 40%;
+  margin-top: 50%;
+}
+
 .jobs {
   padding-left: 3%;
   padding-top: 1%;
@@ -205,10 +210,16 @@ main {
   flex-direction: column;
 }
 
+#event-loader {
+  margin-left: 40%;
+  margin-top: 50%;
+}
+
 .events {
   padding-left: 3%;
   padding-top: 1%;
 }
+
 #event-section {
   margin-top: 0%;
   margin-right: 3%;
@@ -222,6 +233,7 @@ main {
   height: 570px;
   overflow: auto;
 }
+
 .event-listing {
   width: 90%;
   max-width: 100%;
@@ -229,18 +241,23 @@ main {
   padding-right: 5%;
   padding-bottom: 1%;
 }
+
 .event-name {
   margin-bottom: -15px;
 }
+
 .event-company {
   margin-bottom: -15px;
 }
+
 .event-date {
   margin-bottom: -15px;
 }
+
 .event-location {
   padding-bottom: 10px;
 }
+
 .event-expand {
   display: none;
 }
@@ -251,11 +268,11 @@ main {
 #about {
   display: flex;
   width: 100%;
-  padding-top: 10%;
 }
 
 .about-container {
   height: 700px;
+  /*padding-top: 10%;*/
 }
 
 .about-header {
@@ -269,6 +286,41 @@ main {
   padding-left: 7%;
   padding-bottom: 10%;
   padding-right: 7%;
+}
+
+/*RESOURCES SECTION*/
+
+.resources-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.twitter-div {
+  padding: 5%;
+}
+
+.resources-aside {
+  display: none;
+  background-color: white;
+  height: 600px;
+  width: 518px;
+  border-radius: 5px;
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 10%;
+  overflow: auto;
+}
+
+.resources-blurb {
+  font-family: "Lato";
+  font-weight: bold;
+  font-size: 30px;
+  color: #333333;
+  padding: 10%;
 }
 
 /*FOOTER*/
