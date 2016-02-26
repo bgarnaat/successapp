@@ -7,14 +7,15 @@
 
   // RUNS THE '/about' ROUTE
   aboutController.index = function(ctx, next) {
+    // get height of header to offset page view by this amount.
+    var headerHeight = $('.top-section').height();
 
-    var topHeight = $('.top-section').height();
-
-    topHeight = topHeight > 92 ? 92 : topHeight;
-    console.log(topHeight);
+    // if header height is greater than 92 (height of collapsed mobile menu) use 92, if less use headerHeight.
+    headerHeight = headerHeight > 92 ? 92 : headerHeight;
 
     $('html,body').animate(
-      { scrollTop: $('.about-container').offset().top - topHeight},
+      // set scroll position to container position offset for header height.
+      { scrollTop: $('.about-container').offset().top - headerHeight},
       'slow'
     );
     ctx.handled = true;
