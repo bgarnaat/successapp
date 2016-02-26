@@ -29,9 +29,8 @@ parameters:
         sort_by: 'date',
         expand: 'category,organizer,subcategory,venue',
       },
-    });
-
-    $.when(eventbriteQuery).done(function(data) {
+    }).done(function(data) {
+      // successfully loaded event data
       var loadedEvents = [];
       data.events.forEach(function(r) {
         // TODO:  use cat_id, subcat_id, venue_id to load associated data
@@ -72,6 +71,10 @@ parameters:
       });
 
       next(loadedEvents);
+    }).fail(function(xhr, status, error) {
+      // we got an error from eventbrite for some reason
+      // pass no results
+      next([]);
     });
   };
 
