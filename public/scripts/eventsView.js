@@ -18,7 +18,6 @@
         $eventSection.append($eventElement);
       });
     } else {
-      console.log('there were no events');
       var $noEventElement = $('<p class="no-events">No Events Found</p>');
       $eventSection.append($noEventElement);
     }
