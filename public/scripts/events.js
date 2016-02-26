@@ -18,7 +18,7 @@ parameters:
   var PAGE_SIZE = 5;
 
   events.loadEvents = function(query, next) {
-    var eventbriteQuery = $.ajax({
+    $.ajax({
       type: 'GET',
       url: '/eventbrite/',
       dataType: 'json',
