@@ -28,6 +28,9 @@
     }
   });
 
+  // on page load put the cursor in the first box
+  $('#search-keywords').focus();
+
   // SEARCH INDEX CONTROLLER
   searchController.index = function(ctx, next) {
     // load search parameters from regex capturing groups

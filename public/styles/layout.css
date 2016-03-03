@@ -153,10 +153,10 @@ main {
   flex-direction: column;
 }
 
-#job-loader {
+#job-loader, #event-loader {
   margin-left: 40%;
-  margin-top: 50%;
-  max-width: 100px;
+  margin-top: 30%;
+  width: 20%;
 }
 
 .jobs {
@@ -209,11 +209,6 @@ main {
   width: 100%;
   justify-content: center;
   flex-direction: column;
-}
-
-#event-loader {
-  margin-left: 40%;
-  margin-top: 50%;
 }
 
 .events {

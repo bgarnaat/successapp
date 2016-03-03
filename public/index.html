@@ -2,8 +2,10 @@
   <head>
     <title>Success App</title>
     <meta name="viewport" content="width=device-width" initial-scale="1">
+
     <!-- FAVICON -->
     <link rel="shortcut icon" type="image/x-icon" href="/img/checklogofavicon.png">
+
     <!-- CSS LINKING -->
     <link rel="stylesheet" href="/styles/base.css">
     <link rel="stylesheet" href="/styles/layout.css">
@@ -14,6 +16,7 @@
     <!-- FONTS -->
     <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic,900italic,900,300italic,300' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,800,900' rel='stylesheet' type='text/css'>
+
     <!-- JOB TEMPLATE -->
     <script id="job-template" type="text/x-handlebars-template">
       <article class="job-listing">
@@ -42,7 +45,7 @@
           <p class="event-venue-name"><b>Venue:</b> {{venue.name}}</p>
           <p class="event-venue-addess-1"><b>Address:</b> {{venue.address.address_1}} {{venue.address.address_2}}</p>
           <p class="event-capacity"><b>Capacity:</b> {{capacity}}</p>
-          <p class="event-url"><a href={{url}} target="_blank">Register Here</a></p>
+          <p class="event-url"><a href="{{url}}" target="_blank">Register Here</a></p>
         </div>
       </article>
     </script>
@@ -58,6 +61,7 @@
     </script>
 
   </head>
+
   <!-- BODY -->
   <body>
     <!-- NAV BAR -->
@@ -72,12 +76,9 @@
           <li class="nav-target"><a href="/search" class="nav-link">Search</a></li>
           <li class="nav-target" id="about-tab"  data-link="about"><a href="/about" class="nav-link">About</a></li>
           <li class="nav-target" data-link="resource"><a href="/resource" class="nav-link">Resources</a></li>
-          <!-- <li class="nav-target"><a href="#" class="nav-link">Connect</a></li> -->
         </ul>
       </div>
       </nav>
-      <!-- <div class="hamburger-div"> -->
-      <!-- </div> -->
     </header>
 
     <!-- MAIN SECTION -->
